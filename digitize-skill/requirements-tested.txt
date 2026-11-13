@@ -1,0 +1,7 @@
+# Exact versions the skill was tested with (Python 3.11.9). Use if a newer version misbehaves:
+#   python -m pip install -r requirements-tested.txt
+pymupdf==2.0
+rapidocr-onnxruntime==1.4.4
+numpy==2.4.6
+openpyxl==3.1.5
+pillow==13.0.0

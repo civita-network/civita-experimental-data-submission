@@ -1,0 +1,2647 @@
+{
+  "format": "CIVITA-ExpSubmit-v9.02",
+  "envelope": {
+    "db": "Object mapping table names to arrays of row objects"
+  },
+  "tables": {
+    "literature_sources": {
+      "id": "source_id",
+      "prefix": "SRC",
+      "fields": [
+        {
+          "name": "source_id",
+          "type": "id"
+        },
+        {
+          "name": "source_type",
+          "type": "vocab",
+          "vocab": "source_type_list"
+        },
+        {
+          "name": "peer_reviewed",
+          "type": "vocab",
+          "vocab": "yes_no_list"
+        },
+        {
+          "name": "title",
+          "type": "text"
+        },
+        {
+          "name": "authors",
+          "type": "text"
+        },
+        {
+          "name": "year",
+          "type": "text"
+        },
+        {
+          "name": "journal_or_publisher",
+          "type": "text"
+        },
+        {
+          "name": "volume",
+          "type": "text"
+        },
+        {
+          "name": "issue",
+          "type": "text"
+        },
+        {
+          "name": "pages",
+          "type": "text"
+        },
+        {
+          "name": "doi",
+          "type": "text"
+        },
+        {
+          "name": "url",
+          "type": "text"
+        },
+        {
+          "name": "institution",
+          "type": "text"
+        },
+        {
+          "name": "notes",
+          "type": "text"
+        },
+        {
+          "name": "contributor_university",
+          "type": "text"
+        },
+        {
+          "name": "contributor_name",
+          "type": "text"
+        },
+        {
+          "name": "contributor_email",
+          "type": "text"
+        }
+      ]
+    },
+    "keywords": {
+      "id": "source_id",
+      "prefix": "",
+      "fields": [
+        {
+          "name": "source_id",
+          "type": "text"
+        },
+        {
+          "name": "keyword",
+          "type": "text"
+        }
+      ]
+    },
+    "material_batches": {
+      "id": "batch_id",
+      "prefix": "BAT",
+      "fields": [
+        {
+          "name": "batch_id",
+          "type": "id"
+        },
+        {
+          "name": "source_id",
+          "type": "text"
+        },
+        {
+          "name": "mixing_protocol_file_name",
+          "type": "text"
+        },
+        {
+          "name": "batch_label",
+          "type": "text"
+        },
+        {
+          "name": "material_class",
+          "type": "vocab",
+          "vocab": "material_class_list"
+        },
+        {
+          "name": "cement_type",
+          "type": "vocab",
+          "vocab": "cement_type_list"
+        },
+        {
+          "name": "printable",
+          "type": "vocab",
+          "vocab": "yes_no_list"
+        },
+        {
+          "name": "self_consolidating",
+          "type": "vocab",
+          "vocab": "yes_no_list"
+        },
+        {
+          "name": "cement_content_kg_m3",
+          "type": "text"
+        },
+        {
+          "name": "water_binder_ratio",
+          "type": "text"
+        },
+        {
+          "name": "silica_fume_content_kg_m3",
+          "type": "text"
+        },
+        {
+          "name": "fly_ash_content_kg_m3",
+          "type": "text"
+        },
+        {
+          "name": "fly_ash_class",
+          "type": "text"
+        },
+        {
+          "name": "slag_content_kg_m3",
+          "type": "text"
+        },
+        {
+          "name": "fine_aggregate_content_kg_m3",
+          "type": "text"
+        },
+        {
+          "name": "fine_aggregate_dry_density_kg_m3",
+          "type": "text"
+        },
+        {
+          "name": "coarse_aggregate_content_kg_m3",
+          "type": "text"
+        },
+        {
+          "name": "coarse_aggregate_dry_density_kg_m3",
+          "type": "text"
+        },
+        {
+          "name": "max_aggregate_size_mm",
+          "type": "text"
+        },
+        {
+          "name": "aggregate_type",
+          "type": "vocab",
+          "vocab": "aggregate_type_list"
+        },
+        {
+          "name": "superplasticizer_type",
+          "type": "vocab",
+          "vocab": "superplasticizer_type_list"
+        },
+        {
+          "name": "superplasticizer_content_kg_m3",
+          "type": "text"
+        },
+        {
+          "name": "water_reducer_type",
+          "type": "vocab",
+          "vocab": "water_reducer_type_list"
+        },
+        {
+          "name": "water_reducer_content_ml_m3",
+          "type": "text"
+        },
+        {
+          "name": "air_entrainment_type",
+          "type": "vocab",
+          "vocab": "air_entrainment_type_list"
+        },
+        {
+          "name": "air_entrainment_content_ml_m3",
+          "type": "text"
+        },
+        {
+          "name": "rheology_modifier_type",
+          "type": "vocab",
+          "vocab": "rheology_modifier_type_list"
+        },
+        {
+          "name": "rheology_modifier_content_kg_m3",
+          "type": "text"
+        },
+        {
+          "name": "hydration_accelerator_type",
+          "type": "vocab",
+          "vocab": "hydration_accelerator_type_list"
+        },
+        {
+          "name": "hydration_accelerator_content_ml_m3",
+          "type": "text"
+        },
+        {
+          "name": "fiber_type",
+          "type": "vocab",
+          "vocab": "fiber_type_list"
+        },
+        {
+          "name": "fiber_product_name",
+          "type": "text"
+        },
+        {
+          "name": "fiber_volume_fraction",
+          "type": "text"
+        },
+        {
+          "name": "fiber_length_mm",
+          "type": "text"
+        },
+        {
+          "name": "fiber_diameter_mm",
+          "type": "text"
+        },
+        {
+          "name": "air_content_percent_volume_concrete",
+          "type": "text"
+        },
+        {
+          "name": "date_of_pouring_yyyy-mm-dd",
+          "type": "text"
+        },
+        {
+          "name": "notes",
+          "type": "text"
+        }
+      ]
+    },
+    "reinforcement_materials": {
+      "id": "reinforcement_material_id",
+      "prefix": "RMT",
+      "fields": [
+        {
+          "name": "reinforcement_material_id",
+          "type": "id"
+        },
+        {
+          "name": "source_id",
+          "type": "text"
+        },
+        {
+          "name": "reinforcement_material_type",
+          "type": "vocab",
+          "vocab": "reinforcement_material_list"
+        },
+        {
+          "name": "stress_strain_curve_file",
+          "type": "text"
+        },
+        {
+          "name": "elastic_modulus_mpa",
+          "type": "text"
+        },
+        {
+          "name": "yield_strength_mpa",
+          "type": "text"
+        },
+        {
+          "name": "rupture_strength_mpa",
+          "type": "text"
+        },
+        {
+          "name": "rupture_strain",
+          "type": "text"
+        },
+        {
+          "name": "notes",
+          "type": "text"
+        }
+      ]
+    },
+    "geometries": {
+      "id": "geometry_id",
+      "prefix": "GEO",
+      "fields": [
+        {
+          "name": "geometry_id",
+          "type": "id"
+        },
+        {
+          "name": "source_id",
+          "type": "text"
+        },
+        {
+          "name": "specimen_geometry_type",
+          "type": "vocab",
+          "vocab": "specimen_geometry_type_list"
+        },
+        {
+          "name": "specimen_geometry_file_name",
+          "type": "text"
+        },
+        {
+          "name": "Notes",
+          "type": "text"
+        }
+      ]
+    },
+    "printing_variables": {
+      "id": "printing_id",
+      "prefix": "PRI",
+      "fields": [
+        {
+          "name": "printing_id",
+          "type": "id"
+        },
+        {
+          "name": "source_id",
+          "type": "text"
+        },
+        {
+          "name": "geometry_id",
+          "type": "text"
+        },
+        {
+          "name": "printing_speed_mm_sec",
+          "type": "text"
+        },
+        {
+          "name": "volumetric_flow_rate_mm3_sec",
+          "type": "text"
+        },
+        {
+          "name": "nozzle_orientation",
+          "type": "text"
+        },
+        {
+          "name": "nozzle_shape",
+          "type": "text"
+        },
+        {
+          "name": "nozzle_length_mm",
+          "type": "text"
+        },
+        {
+          "name": "extrusion_pressure_pa",
+          "type": "text"
+        },
+        {
+          "name": "hose_length_mm",
+          "type": "text"
+        },
+        {
+          "name": "nozzle_diameter_mm",
+          "type": "text"
+        },
+        {
+          "name": "hose_diameter_mm",
+          "type": "text"
+        },
+        {
+          "name": "pump_type",
+          "type": "text"
+        },
+        {
+          "name": "pump_model",
+          "type": "text"
+        },
+        {
+          "name": "arm_type",
+          "type": "text"
+        },
+        {
+          "name": "number_of_dofs",
+          "type": "text"
+        },
+        {
+          "name": "arm_model",
+          "type": "text"
+        }
+      ]
+    },
+    "reinforcement_layouts": {
+      "id": "reinforcement_layout_id",
+      "prefix": "RFL",
+      "fields": [
+        {
+          "name": "reinforcement_layout_id",
+          "type": "id"
+        },
+        {
+          "name": "source_id",
+          "type": "text"
+        },
+        {
+          "name": "geometry_id",
+          "type": "text"
+        },
+        {
+          "name": "longitudinal_reinforcement",
+          "type": "vocab",
+          "vocab": "yes_no_list"
+        },
+        {
+          "name": "transverse_reinforcement",
+          "type": "vocab",
+          "vocab": "yes_no_list"
+        },
+        {
+          "name": "external_reinforcement",
+          "type": "vocab",
+          "vocab": "yes_no_list"
+        },
+        {
+          "name": "reinforcement_file_name",
+          "type": "text"
+        },
+        {
+          "name": "Notes",
+          "type": "text"
+        }
+      ]
+    },
+    "reinforcement_components": {
+      "id": "reinforcement_component_id",
+      "prefix": "REF",
+      "fields": [
+        {
+          "name": "reinforcement_component_id",
+          "type": "id"
+        },
+        {
+          "name": "source_id",
+          "type": "text"
+        },
+        {
+          "name": "reinforcement_material_id",
+          "type": "text"
+        },
+        {
+          "name": "reinforcement_layout_id",
+          "type": "text"
+        },
+        {
+          "name": "notes",
+          "type": "text"
+        },
+        {
+          "name": "reinforcement_type",
+          "type": "vocab",
+          "vocab": "reinforcement_type_list"
+        },
+        {
+          "name": "reinforcement_orientation",
+          "type": "vocab",
+          "vocab": "orientation_list"
+        },
+        {
+          "name": "number_of_reinf_elements",
+          "type": "text"
+        },
+        {
+          "name": "bar_designation",
+          "type": "vocab",
+          "vocab": "bar_designation_list"
+        },
+        {
+          "name": "bar_nominal_diameter_mm",
+          "type": "text"
+        },
+        {
+          "name": "bar_nominal_area_mm2",
+          "type": "text"
+        },
+        {
+          "name": "layer_depth_mm",
+          "type": "text"
+        },
+        {
+          "name": "spacing_mm",
+          "type": "text"
+        },
+        {
+          "name": "horizontal_cover_mm",
+          "type": "text"
+        },
+        {
+          "name": "vertical_cover_mm",
+          "type": "text"
+        },
+        {
+          "name": "begin_distance_mm",
+          "type": "text"
+        },
+        {
+          "name": "end_distance_mm",
+          "type": "text"
+        },
+        {
+          "name": "reinforcement_centroid_x_mm",
+          "type": "text"
+        },
+        {
+          "name": "reinforcement_centroid_y_mm",
+          "type": "text"
+        },
+        {
+          "name": "reinforcement_centroid_z_mm",
+          "type": "text"
+        },
+        {
+          "name": "reinforcement_width_mm",
+          "type": "text"
+        },
+        {
+          "name": "reinforcement_length_mm",
+          "type": "text"
+        },
+        {
+          "name": "reinforcement_thickness_mm",
+          "type": "text"
+        },
+        {
+          "name": "reinforcement_angle_deg",
+          "type": "text"
+        },
+        {
+          "name": "adhesive_type",
+          "type": "vocab",
+          "vocab": "adhesive_type_list"
+        },
+        {
+          "name": "adhesive_thickness_mm",
+          "type": "text"
+        },
+        {
+          "name": "adhesive_modulus_mpa",
+          "type": "text"
+        },
+        {
+          "name": "adhesive_strength_mpa",
+          "type": "text"
+        },
+        {
+          "name": "adhesive_failure_strain",
+          "type": "text"
+        },
+        {
+          "name": "anchorage_presence",
+          "type": "vocab",
+          "vocab": "yes_no_list"
+        },
+        {
+          "name": "anchorage_type",
+          "type": "vocab",
+          "vocab": "anchorage_type_list"
+        },
+        {
+          "name": "anchorage_size_mm",
+          "type": "text"
+        },
+        {
+          "name": "anchorage_location_x_mm",
+          "type": "text"
+        },
+        {
+          "name": "anchorage_location_y_mm",
+          "type": "text"
+        },
+        {
+          "name": "anchorage_location_z_mm",
+          "type": "text"
+        },
+        {
+          "name": "anchorage_modulus_mpa",
+          "type": "text"
+        },
+        {
+          "name": "anchorage_strength_mpa",
+          "type": "text"
+        },
+        {
+          "name": "anchorage_failure_strain",
+          "type": "text"
+        },
+        {
+          "name": "UNDER DEVELOPMENT",
+          "type": "text"
+        }
+      ]
+    },
+    "specimens": {
+      "id": "specimen_id",
+      "prefix": "SPC",
+      "fields": [
+        {
+          "name": "specimen_id",
+          "type": "id"
+        },
+        {
+          "name": "source_id",
+          "type": "text"
+        },
+        {
+          "name": "batch_id",
+          "type": "text"
+        },
+        {
+          "name": "geometry_id",
+          "type": "text"
+        },
+        {
+          "name": "reinforcement_layout_id",
+          "type": "text"
+        },
+        {
+          "name": "printing_variables_id",
+          "type": "text"
+        },
+        {
+          "name": "structural_form_type",
+          "type": "vocab",
+          "vocab": "structural_form_list"
+        },
+        {
+          "name": "notes",
+          "type": "text"
+        }
+      ]
+    },
+    "tests": {
+      "id": "test_id",
+      "prefix": "TST",
+      "fields": [
+        {
+          "name": "test_id",
+          "type": "id"
+        },
+        {
+          "name": "source_id",
+          "type": "text"
+        },
+        {
+          "name": "specimen_id",
+          "type": "text"
+        },
+        {
+          "name": "number_of_repeats",
+          "type": "text"
+        },
+        {
+          "name": "test_setup_visualization_file_name",
+          "type": "text"
+        },
+        {
+          "name": "test_protocol_file_name",
+          "type": "text"
+        },
+        {
+          "name": "test_type",
+          "type": "vocab",
+          "vocab": "test_type_list"
+        },
+        {
+          "name": "test_parameters_file_name",
+          "type": "text"
+        },
+        {
+          "name": "main_observed_mechanisms",
+          "type": "vocab",
+          "vocab": "observed_mechanism_list"
+        },
+        {
+          "name": "age_days",
+          "type": "text"
+        },
+        {
+          "name": "curing_condition",
+          "type": "vocab",
+          "vocab": "curing_condition_list"
+        },
+        {
+          "name": "hygral_boundary_conditions",
+          "type": "vocab",
+          "vocab": "hygral_boundary_condition_list"
+        },
+        {
+          "name": "thermal_boundary_conditions",
+          "type": "vocab",
+          "vocab": "thermal_boundary_condition_list"
+        },
+        {
+          "name": "initial_env_temperature_C",
+          "type": "text"
+        },
+        {
+          "name": "env_temperature_C_history_file_name",
+          "type": "text"
+        },
+        {
+          "name": "initial_env_relative_humidity_percent",
+          "type": "text"
+        },
+        {
+          "name": "env_relative_humidity_percent_history_file_name",
+          "type": "text"
+        },
+        {
+          "name": "test_date_yyyy-mm-dd",
+          "type": "text"
+        },
+        {
+          "name": "notes",
+          "type": "text"
+        }
+      ]
+    },
+    "devices_and_supports": {
+      "id": "device_id",
+      "prefix": "DEV",
+      "fields": [
+        {
+          "name": "device_id",
+          "type": "id"
+        },
+        {
+          "name": "source_id",
+          "type": "text"
+        },
+        {
+          "name": "test_id",
+          "type": "text"
+        },
+        {
+          "name": "device_type",
+          "type": "vocab",
+          "vocab": "devices_and_supports_type_list"
+        },
+        {
+          "name": "x_location_mm",
+          "type": "text"
+        },
+        {
+          "name": "y_location_mm",
+          "type": "text"
+        },
+        {
+          "name": "z_location_mm",
+          "type": "text"
+        },
+        {
+          "name": "orientation",
+          "type": "vocab",
+          "vocab": "orientation_list"
+        },
+        {
+          "name": "device_parameters_file",
+          "type": "text"
+        },
+        {
+          "name": "notes",
+          "type": "text"
+        }
+      ]
+    },
+    "loading_histories": {
+      "id": "loading_id",
+      "prefix": "LDG",
+      "fields": [
+        {
+          "name": "loading_id",
+          "type": "id"
+        },
+        {
+          "name": "source_id",
+          "type": "text"
+        },
+        {
+          "name": "test_id",
+          "type": "text"
+        },
+        {
+          "name": "device_id",
+          "type": "text"
+        },
+        {
+          "name": "loading_mode",
+          "type": "vocab",
+          "vocab": "loading_mode_list"
+        },
+        {
+          "name": "loading_control_variable",
+          "type": "vocab",
+          "vocab": "loading_control_variable_list"
+        },
+        {
+          "name": "initial_control_variable_rate",
+          "type": "text"
+        },
+        {
+          "name": "control_variable_rate_units",
+          "type": "text"
+        },
+        {
+          "name": "begin_time_sec",
+          "type": "text"
+        },
+        {
+          "name": "end_time_sec",
+          "type": "text"
+        },
+        {
+          "name": "loading_history_file_name",
+          "type": "text"
+        },
+        {
+          "name": "notes",
+          "type": "text"
+        }
+      ]
+    },
+    "data": {
+      "id": "data_id",
+      "prefix": "DAT",
+      "fields": [
+        {
+          "name": "data_id",
+          "type": "id"
+        },
+        {
+          "name": "source_id",
+          "type": "text"
+        },
+        {
+          "name": "test_id",
+          "type": "text"
+        },
+        {
+          "name": "test_repeat_id",
+          "type": "text"
+        },
+        {
+          "name": "notes",
+          "type": "text"
+        },
+        {
+          "name": "source_location",
+          "type": "text"
+        },
+        {
+          "name": "extraction_methods",
+          "type": "vocab",
+          "vocab": "extraction_method_list"
+        },
+        {
+          "name": "extraction_date_yyyy-mm-dd",
+          "type": "text"
+        },
+        {
+          "name": "data_type",
+          "type": "vocab",
+          "vocab": "data_type_list"
+        },
+        {
+          "name": "number_of_specimens",
+          "type": "text"
+        },
+        {
+          "name": "specimen_label",
+          "type": "text"
+        },
+        {
+          "name": "device_id",
+          "type": "text"
+        },
+        {
+          "name": "quantity_reported",
+          "type": "vocab",
+          "vocab": "reported_quantity_list"
+        },
+        {
+          "name": "quantity_reported_type",
+          "type": "vocab",
+          "vocab": "quantity_reported_type_list"
+        },
+        {
+          "name": "quantity_reported_mean",
+          "type": "text"
+        },
+        {
+          "name": "quantity_reported_standard_deviation",
+          "type": "text"
+        },
+        {
+          "name": "units",
+          "type": "vocab",
+          "vocab": "units_type_list"
+        },
+        {
+          "name": "x_device_id",
+          "type": "text"
+        },
+        {
+          "name": "y_device_id",
+          "type": "text"
+        },
+        {
+          "name": "x_quantity_reported",
+          "type": "vocab",
+          "vocab": "reported_quantity_list"
+        },
+        {
+          "name": "x_quantity_reported_type",
+          "type": "vocab",
+          "vocab": "quantity_reported_type_list"
+        },
+        {
+          "name": "y_quantity_reported",
+          "type": "vocab",
+          "vocab": "reported_quantity_list"
+        },
+        {
+          "name": "y_quantity_reported_type",
+          "type": "vocab",
+          "vocab": "quantity_reported_type_list"
+        },
+        {
+          "name": "file_name",
+          "type": "text"
+        },
+        {
+          "name": "table_name",
+          "type": "text"
+        },
+        {
+          "name": "table_description",
+          "type": "text"
+        },
+        {
+          "name": "table_file_name",
+          "type": "text"
+        },
+        {
+          "name": "name",
+          "type": "text"
+        },
+        {
+          "name": "description",
+          "type": "text"
+        },
+        {
+          "name": "type",
+          "type": "text"
+        },
+        {
+          "name": "format",
+          "type": "text"
+        },
+        {
+          "name": "filename",
+          "type": "text"
+        }
+      ]
+    },
+    "extracted_values": {
+      "id": "record_id",
+      "prefix": "REC",
+      "fields": [
+        {
+          "name": "record_id",
+          "type": "id"
+        },
+        {
+          "name": "test_id",
+          "type": "text"
+        },
+        {
+          "name": "related_data_id",
+          "type": "text"
+        },
+        {
+          "name": "variable_name",
+          "type": "text"
+        },
+        {
+          "name": "symbol",
+          "type": "text"
+        },
+        {
+          "name": "value",
+          "type": "text"
+        },
+        {
+          "name": "units",
+          "type": "text"
+        },
+        {
+          "name": "record_origin_location",
+          "type": "text"
+        },
+        {
+          "name": "extraction_method",
+          "type": "vocab",
+          "vocab": "extraction_method"
+        },
+        {
+          "name": "computation_formula",
+          "type": "text"
+        },
+        {
+          "name": "notes",
+          "type": "text"
+        }
+      ]
+    },
+    "material_models": {
+      "id": "model_id",
+      "prefix": "MOD",
+      "fields": [
+        {
+          "name": "model_id",
+          "type": "id"
+        },
+        {
+          "name": "source_id",
+          "type": "text"
+        },
+        {
+          "name": "model_name",
+          "type": "text"
+        },
+        {
+          "name": "model_family",
+          "type": "vocab",
+          "vocab": "model_family"
+        },
+        {
+          "name": "model_role",
+          "type": "vocab",
+          "vocab": "model_role"
+        },
+        {
+          "name": "constitutive_framework",
+          "type": "text"
+        },
+        {
+          "name": "dimensionality",
+          "type": "text"
+        },
+        {
+          "name": "stress_state",
+          "type": "text"
+        },
+        {
+          "name": "rate_dependence",
+          "type": "text"
+        },
+        {
+          "name": "temperature_dependence",
+          "type": "text"
+        },
+        {
+          "name": "software_or_implementation",
+          "type": "text"
+        },
+        {
+          "name": "calibration_test_ids",
+          "type": "text"
+        },
+        {
+          "name": "validation_test_ids",
+          "type": "text"
+        },
+        {
+          "name": "equation_locations",
+          "type": "text"
+        },
+        {
+          "name": "assumptions",
+          "type": "text"
+        },
+        {
+          "name": "limitations",
+          "type": "text"
+        },
+        {
+          "name": "review_status",
+          "type": "vocab",
+          "vocab": "review_status"
+        },
+        {
+          "name": "notes",
+          "type": "text"
+        }
+      ]
+    },
+    "model_parameters": {
+      "id": "parameter_id",
+      "prefix": "PAR",
+      "fields": [
+        {
+          "name": "parameter_id",
+          "type": "id"
+        },
+        {
+          "name": "model_id",
+          "type": "text"
+        },
+        {
+          "name": "parameter_name",
+          "type": "text"
+        },
+        {
+          "name": "symbol",
+          "type": "text"
+        },
+        {
+          "name": "value",
+          "type": "text"
+        },
+        {
+          "name": "units",
+          "type": "text"
+        },
+        {
+          "name": "lower_bound",
+          "type": "text"
+        },
+        {
+          "name": "upper_bound",
+          "type": "text"
+        },
+        {
+          "name": "parameter_origin",
+          "type": "vocab",
+          "vocab": "parameter_origin"
+        },
+        {
+          "name": "calibration_test_ids",
+          "type": "text"
+        },
+        {
+          "name": "source_location",
+          "type": "text"
+        },
+        {
+          "name": "confidence",
+          "type": "text"
+        },
+        {
+          "name": "review_status",
+          "type": "vocab",
+          "vocab": "review_status"
+        },
+        {
+          "name": "notes",
+          "type": "text"
+        }
+      ]
+    },
+    "figures": {
+      "id": "figure_id",
+      "prefix": "FIG",
+      "fields": [
+        {
+          "name": "figure_id",
+          "type": "id"
+        },
+        {
+          "name": "source_id",
+          "type": "text"
+        },
+        {
+          "name": "figure_id_in_paper",
+          "type": "text"
+        },
+        {
+          "name": "panel_position",
+          "type": "text"
+        },
+        {
+          "name": "page",
+          "type": "text"
+        },
+        {
+          "name": "caption",
+          "type": "text"
+        },
+        {
+          "name": "plot_type",
+          "type": "vocab",
+          "vocab": "plot_type"
+        },
+        {
+          "name": "figure_type",
+          "type": "vocab",
+          "vocab": "figure_type"
+        },
+        {
+          "name": "num_curves",
+          "type": "text"
+        },
+        {
+          "name": "x_label",
+          "type": "text"
+        },
+        {
+          "name": "y_label",
+          "type": "text"
+        },
+        {
+          "name": "x_units",
+          "type": "text"
+        },
+        {
+          "name": "y_units",
+          "type": "text"
+        },
+        {
+          "name": "legend_entries",
+          "type": "text"
+        },
+        {
+          "name": "axis_type",
+          "type": "vocab",
+          "vocab": "axis_type"
+        },
+        {
+          "name": "x_min",
+          "type": "text"
+        },
+        {
+          "name": "x_max",
+          "type": "text"
+        },
+        {
+          "name": "y_min",
+          "type": "text"
+        },
+        {
+          "name": "y_max",
+          "type": "text"
+        },
+        {
+          "name": "linked_test_ids",
+          "type": "text"
+        },
+        {
+          "name": "crop_left",
+          "type": "text"
+        },
+        {
+          "name": "crop_top",
+          "type": "text"
+        },
+        {
+          "name": "crop_right",
+          "type": "text"
+        },
+        {
+          "name": "crop_bottom",
+          "type": "text"
+        },
+        {
+          "name": "crop_method",
+          "type": "text"
+        },
+        {
+          "name": "digitization_confidence",
+          "type": "text"
+        },
+        {
+          "name": "calibration_json",
+          "type": "text"
+        },
+        {
+          "name": "calibration_method",
+          "type": "text"
+        },
+        {
+          "name": "calibration_error_px",
+          "type": "text"
+        },
+        {
+          "name": "extraction_method",
+          "type": "text"
+        },
+        {
+          "name": "extraction_version",
+          "type": "text"
+        },
+        {
+          "name": "validation_json",
+          "type": "text"
+        },
+        {
+          "name": "review_status",
+          "type": "vocab",
+          "vocab": "review_status"
+        },
+        {
+          "name": "curve_data",
+          "type": "text"
+        },
+        {
+          "name": "notes",
+          "type": "text"
+        }
+      ]
+    }
+  },
+  "vocabularies": {
+    "adhesive_type_list": [
+      "cementitious",
+      "epoxy",
+      "methacrylate",
+      "polyester",
+      "polyurethane",
+      "vinyl_ester",
+      "other"
+    ],
+    "aggregate_type_list": [
+      "basalt",
+      "calcareous",
+      "dolomite",
+      "granite",
+      "gravel_crushed",
+      "gravel_natural",
+      "limestone",
+      "lightweight_expanded_clay",
+      "lightweight_pumice",
+      "lightweight_shale",
+      "lightweight_slate",
+      "manufactured_sand",
+      "natural_sand",
+      "quartzite",
+      "recycled_concrete",
+      "recycled_masonry",
+      "river_gravel",
+      "sandstone",
+      "siliceous",
+      "slag",
+      "other",
+      "unknown"
+    ],
+    "air_entrainment_type_list": [
+      "air_entrainment_unspecified",
+      "synthetic_detergent_based",
+      "vinsol_resin",
+      "wood_resin",
+      "fatty_acid_based",
+      "sulfated_hydrocarbon",
+      "protein_based",
+      "natural_resin",
+      "surfactant_based",
+      "other",
+      "unknown"
+    ],
+    "anchorage_type_list": [
+      "adhesive_anchor",
+      "embedded_bar_anchor",
+      "end_plate_anchor",
+      "frp_fan_anchor",
+      "frp_full_wrap",
+      "frp_patch_anchor",
+      "frp_spike_anchor",
+      "frp_u_wrap",
+      "mechanical_anchor_bolt",
+      "mechanical_anchor_plate",
+      "near_surface_mounted_anchor",
+      "other"
+    ],
+    "bar_designation_list": [
+      "ASTM_#3",
+      "ASTM_#4",
+      "ASTM_#5",
+      "ASTM_#6",
+      "ASTM_#7",
+      "ASTM_#8",
+      "ASTM_#9",
+      "ASTM_#10",
+      "ASTM_#11",
+      "ASTM_#14",
+      "ASTM_#18",
+      "EN_Ø6",
+      "EN_Ø8",
+      "EN_Ø10",
+      "EN_Ø12",
+      "EN_Ø14",
+      "EN_Ø16",
+      "EN_Ø20",
+      "EN_Ø25",
+      "EN_Ø28",
+      "EN_Ø32",
+      "EN_Ø40",
+      "GB_6",
+      "GB_8",
+      "GB_10",
+      "GB_12",
+      "GB_14",
+      "GB_16",
+      "GB_18",
+      "GB_20",
+      "GB_22",
+      "GB_25",
+      "GB_28",
+      "GB_32",
+      "GB_36",
+      "GB_40",
+      "JIS_D6",
+      "JIS_D10",
+      "JIS_D13",
+      "JIS_D16",
+      "JIS_D19",
+      "JIS_D22",
+      "JIS_D25",
+      "JIS_D29",
+      "JIS_D32",
+      "JIS_D35",
+      "JIS_D38",
+      "JIS_D41",
+      "other"
+    ],
+    "bar_nominal_area_mm2_list": [
+      "71",
+      "129",
+      "199",
+      "284",
+      "387",
+      "510",
+      "645",
+      "819",
+      "1006",
+      "1452",
+      "2581",
+      "28",
+      "50",
+      "79",
+      "113",
+      "154",
+      "201",
+      "314",
+      "491",
+      "616",
+      "804",
+      "1257",
+      "28",
+      "50",
+      "79",
+      "113",
+      "154",
+      "201",
+      "254",
+      "314",
+      "380",
+      "491",
+      "616",
+      "804",
+      "1018",
+      "1257",
+      "32",
+      "71",
+      "127",
+      "199",
+      "287",
+      "387",
+      "507",
+      "642",
+      "794",
+      "957",
+      "1140",
+      "1340"
+    ],
+    "bar_nominal_diameter_mm_list": [
+      "9.5",
+      "12.7",
+      "15.9",
+      "19.1",
+      "22.2",
+      "25.4",
+      "28.7",
+      "32.3",
+      "35.8",
+      "43",
+      "57.3",
+      "6",
+      "8",
+      "10",
+      "12",
+      "14",
+      "16",
+      "20",
+      "25",
+      "28",
+      "32",
+      "40",
+      "6",
+      "8",
+      "10",
+      "12",
+      "14",
+      "16",
+      "18",
+      "20",
+      "22",
+      "25",
+      "28",
+      "32",
+      "36",
+      "40",
+      "6",
+      "10",
+      "13",
+      "16",
+      "19",
+      "22",
+      "25",
+      "29",
+      "32",
+      "35",
+      "38",
+      "41"
+    ],
+    "cement_type_list": [
+      "ASTM_C1157_Type_GU",
+      "ASTM_C1157_Type_HE",
+      "ASTM_C1157_Type_HS",
+      "ASTM_C1157_Type_LH",
+      "ASTM_C1157_Type_MH",
+      "ASTM_C1157_Type_MS",
+      "ASTM_C150_Type_I",
+      "ASTM_C150_Type_II",
+      "ASTM_C150_Type_III",
+      "ASTM_C150_Type_IV",
+      "ASTM_C150_Type_V",
+      "ASTM_C595_Type_IL",
+      "ASTM_C595_Type_IL_HE",
+      "ASTM_C595_Type_IL_HS",
+      "ASTM_C595_Type_IL_MS",
+      "ASTM_C595_Type_IP",
+      "ASTM_C595_Type_IP_HE",
+      "ASTM_C595_Type_IP_HS",
+      "ASTM_C595_Type_IP_MS",
+      "ASTM_C595_Type_IS_LS70_HS",
+      "ASTM_C595_Type_IS_LT70",
+      "ASTM_C595_Type_IS_LT70_HE",
+      "ASTM_C595_Type_IS_LT70_MS",
+      "ASTM_C595_Type_IT_S_LT70",
+      "ASTM_C595_Type_IT_S_LT70_HE",
+      "ASTM_C595_Type_IT_S_LT70_HS",
+      "ASTM_C595_Type_IT_S_LT70_MS",
+      "EN197_CEM_I",
+      "EN197_CEM_II",
+      "EN197_CEM_III",
+      "EN197_CEM_IV",
+      "EN197_CEM_V",
+      "GB175_PC",
+      "GB175_PF",
+      "GB175_PI",
+      "GB175_PII",
+      "GB175_PO",
+      "GB175_PS",
+      "other",
+      "unknown"
+    ],
+    "curing_condition_list": [
+      "air_curing",
+      "autoclave_curing",
+      "controlled_environment",
+      "field_curing",
+      "fog_room",
+      "heat_curing",
+      "laboratory_air",
+      "lime_saturated_water",
+      "membrane_curing",
+      "no_curing",
+      "sealed_curing",
+      "standard_moist_curing",
+      "steam_curing",
+      "water_curing",
+      "other",
+      "unknown"
+    ],
+    "data_origin_type_list": [
+      "dataset",
+      "figure",
+      "supplementary",
+      "table",
+      "text",
+      "other",
+      "unknown"
+    ],
+    "data_type_list": [
+      "2D_field",
+      "3D_field",
+      "curve",
+      "image",
+      "scalar",
+      "table",
+      "video",
+      "other"
+    ],
+    "devices_and_supports_parameters_list": [
+      "gage_length",
+      "load_cell_capacity"
+    ],
+    "devices_and_supports_type_list": [
+      "accelerometer",
+      "adiabatic_calorimeter",
+      "balance",
+      "camera",
+      "clip_gauge",
+      "CMOD_gauge",
+      "CTOD_gauge",
+      "data_logger",
+      "DIC",
+      "diffusion_cell",
+      "dilatometer",
+      "environmental_chamber",
+      "exposure_chamber",
+      "extensometer",
+      "fixed_support",
+      "flow_table",
+      "ftir_spectrometer",
+      "half_cell_electrode",
+      "high_speed_camera",
+      "humidity_sensor",
+      "icp",
+      "isothermal_calorimeter",
+      "laser_displacement_sensor",
+      "laser_sensor",
+      "leaching_reactor",
+      "length_comparator",
+      "load_cell",
+      "LVDT",
+      "mercury_intrusion_porosimeter",
+      "micro_ct_scanner",
+      "microscope",
+      "migration_cell",
+      "nmr_spectrometer",
+      "optical_microscope",
+      "pad_support",
+      "penetration_resistance_device",
+      "permeability_apparatus",
+      "ph_meter",
+      "pin_support",
+      "potentiostat",
+      "pressure_sensor",
+      "rcpt_apparatus",
+      "resistivity_meter",
+      "rheometer",
+      "roller_support",
+      "rotation_sensor",
+      "scanning_electron_microscope",
+      "slump_cone",
+      "sorptivity_setup",
+      "strain_gauge",
+      "string_potentiometer",
+      "temperature_sensor",
+      "thermocouple",
+      "tga_analyzer",
+      "unknown",
+      "vicat_apparatus",
+      "wenner_probe",
+      "xrd_diffractometer",
+      "other"
+    ],
+    "extraction_method_list": [
+      "AI-assisted",
+      "computed",
+      "digitized",
+      "direct",
+      "unknown"
+    ],
+    "fiber_type_list": [
+      "aramid",
+      "basalt",
+      "carbon",
+      "glass",
+      "natural",
+      "polyethylene",
+      "polypropylene_macro",
+      "polypropylene_micro",
+      "polyvinyl_alcohol",
+      "recycled_polymer",
+      "steel_crimped",
+      "steel_hooked",
+      "steel_hybrid",
+      "steel_straight",
+      "steel_twisted",
+      "other",
+      "unknown"
+    ],
+    "geometry_parameters_list": [
+      "depth",
+      "length",
+      "thickness",
+      "diameter",
+      "dogbone_central_length",
+      "dogbone_central_width",
+      "dogbone_head_length",
+      "dogbone_transition_length",
+      "dogbone_transition_width",
+      "double_notched_prism",
+      "ell_depth_1",
+      "ell_depth_2",
+      "ell_length_1",
+      "ell_length_2",
+      "notch_depth",
+      "notch_offset",
+      "notch_tip_radius",
+      "notch_width",
+      "width"
+    ],
+    "hydration_accelerator_type_list": [
+      "hydration_accelerator_unspecified",
+      "calcium_chloride",
+      "non_chloride_accelerator",
+      "calcium_nitrate",
+      "calcium_formate",
+      "triethanolamine",
+      "sodium_thiocyanate",
+      "sodium_nitrate",
+      "aluminate_based",
+      "silicate_based",
+      "carbonate_based",
+      "alkali_based",
+      "shotcrete_accelerator",
+      "set_accelerating_admixture",
+      "hardening_accelerating_admixture",
+      "other",
+      "unknown"
+    ],
+    "hygral_boundary_condition_list": [
+      "sealed",
+      "unsealed",
+      "unknown"
+    ],
+    "image_type_list": [
+      "crack_detail",
+      "crack_pattern",
+      "deformation",
+      "failure",
+      "field_map",
+      "figure_plot",
+      "instrumentation",
+      "microstructure",
+      "specimen",
+      "table_image",
+      "test_setup",
+      "other",
+      "unknown"
+    ],
+    "loading_control_variable_list": [
+      "CMOD",
+      "CTOD",
+      "displacement",
+      "load",
+      "strain",
+      "stress",
+      "other",
+      "unknown"
+    ],
+    "loading_mode_list": [
+      "cyclic",
+      "dynamic",
+      "impulsive",
+      "monotonic",
+      "random",
+      "reversed_cyclic",
+      "other",
+      "unknown"
+    ],
+    "material_class_list": [
+      "cement_paste",
+      "engineered_cementitious_composites",
+      "fiber_reinforced_concrete",
+      "heavyweight_concrete",
+      "high_performance_concrete",
+      "lightweight_concrete",
+      "mortar",
+      "normal_weight_concrete",
+      "ultra_high_performance_concrete",
+      "other"
+    ],
+    "observed_mechanism_list": [
+      "bond | bond_slip_and_debonding",
+      "bond | steel_concrete_interaction",
+      "chemical | degree_of_reaction",
+      "chemical | ion_concentration",
+      "chemical | mass_loss",
+      "chemical | material_reactivity",
+      "chemical | microstructure_morphology",
+      "chemical | phase_assemblage",
+      "chemical | pore_structure",
+      "durability | alkali_silica_reaction",
+      "durability | carbonation",
+      "durability | carbonation_depth",
+      "durability | chloride_content",
+      "durability | chloride_penetration",
+      "durability | corrosion_current",
+      "durability | corrosion_probability",
+      "durability | freeze_thaw_damage",
+      "durability | length_change_expansion",
+      "durability | mass_loss",
+      "durability | permeability",
+      "durability | pore_structure_evolution",
+      "durability | sulfate_attack_expansion",
+      "elastic | linear_elasticity",
+      "fiber | fiber_bridging_and_pull_out_resistance",
+      "fiber | post_cracking_residual_strength",
+      "fracture | fracture_energy_dissipation",
+      "fracture | fracture_propagation",
+      "fracture | mixed_mode_dilatancy",
+      "fracture | mode_I",
+      "fracture | mode_II",
+      "fracture | mode_III",
+      "fracture | parallel_stress_effect",
+      "fracture | initiation",
+      "fresh | air_entrainment",
+      "fresh | density_and_consistency",
+      "fresh | rheology_evolution",
+      "fresh | segregation_and_stability",
+      "fresh | setting",
+      "fresh | setting_and_early_age_stiffening",
+      "fresh | spread_diameter",
+      "fresh | workability",
+      "fresh | rheology",
+      "frp | bond",
+      "ndt | surface_hardness_rebound_response",
+      "ndt | wave_propagation_velocity",
+      "stiffness | bending_stiffness",
+      "stiffness | crack_width",
+      "stiffness | dynamic_response",
+      "stiffness | natural_frequency",
+      "stiffness | tension_stiffening",
+      "stiffness | time_dependent_deflection",
+      "stiffness | time_dependent_strain",
+      "strength | aggregate_interlock",
+      "strength | axial_capacity",
+      "strength | bending_capacity",
+      "strength | biaxial_failure",
+      "strength | bond_slip",
+      "strength | cohesion_adhesion",
+      "strength | compressive_strain_hardening",
+      "strength | concrete_cone_breakout",
+      "strength | concrete_cone_failure",
+      "strength | creep_buckling",
+      "strength | dowel_action",
+      "strength | ductility",
+      "strength | energy_dissipation",
+      "strength | failure_mode",
+      "strength | impact_resistance",
+      "strength | shear_fracture",
+      "strength | multiaxial_failure",
+      "strength | pozzolan_reactivity",
+      "strength | seismic_response",
+      "strength | shear_friction",
+      "strength | slag_reactivity",
+      "strength | slab_column_connection_failure",
+      "strength | crushing_failure",
+      "strength | tensile_failure",
+      "strength | tensile_strength",
+      "strength | torsion_capacity",
+      "strength | unconfined_compressive_failure",
+      "strength | vertex_effect",
+      "thermal | adiabatic_temperature_rise",
+      "thermal | heat_capacity",
+      "thermal | heat_evolution",
+      "thermal | linear_thermal_expansion",
+      "thermal | thermal_diffusivity",
+      "time_dependent | autogenous_shrinkage",
+      "time_dependent | creep",
+      "time_dependent | drying_shrinkage",
+      "time_dependent | maturity",
+      "transport | absorption_and_porosity",
+      "transport | chloride_diffusion",
+      "transport | electrical_resistivity",
+      "transport | gas_permeability",
+      "transport | sorptivity",
+      "transport | water_permeability",
+      "other"
+    ],
+    "orientation_list": [
+      "x",
+      "y",
+      "z",
+      "helicoidal",
+      "inclined",
+      "unknown"
+    ],
+    "quantity_reported_type_list": [
+      "derived",
+      "raw",
+      "unknown"
+    ],
+    "reinforcement_material_list": [
+      "basalt_fiber_reinforced_polymer",
+      "black_steel",
+      "carbon_fiber_reinforced_polymer",
+      "galvanized_steel",
+      "glass_fiber_reinforced_polymer",
+      "stainless_steel",
+      "other"
+    ],
+    "reinforcement_parameters_list": [
+      "begin_distance",
+      "end_distance",
+      "spacing",
+      "orientation",
+      "layer_depth",
+      "external_reinforcement_centroid",
+      "external_reinforcement_angle",
+      "external_reinforcement_length",
+      "external_reinforcement_width",
+      "anchorage_location"
+    ],
+    "reinforcement_type_list": [
+      "2_legs_stirrups",
+      "plates",
+      "sheets",
+      "tensile_bar",
+      "ties",
+      "wraps",
+      "other"
+    ],
+    "reported_quantity_list": [
+      "absorption",
+      "bound_water",
+      "CMOD",
+      "coefficient_of_thermal_expansion",
+      "compressive_strength",
+      "concentration",
+      "CTOD",
+      "cumulative_heat",
+      "current",
+      "deflection",
+      "density",
+      "depth",
+      "diameter",
+      "diffusion_coefficient",
+      "displacement",
+      "distribution",
+      "elastic_modulus",
+      "energy",
+      "expansion",
+      "fraction",
+      "frequency",
+      "heat_capacity",
+      "heat_flow",
+      "humidity",
+      "length_change",
+      "load",
+      "mass",
+      "mass_loss",
+      "peak_load",
+      "permeability",
+      "pH",
+      "porosity",
+      "potential",
+      "pressure",
+      "resistivity",
+      "rotation",
+      "slippage",
+      "slump",
+      "sorptivity",
+      "strain",
+      "stress",
+      "temperature",
+      "temperature_rise",
+      "tensile_strength",
+      "thermal_conductivity",
+      "thermal_diffusivity",
+      "time",
+      "viscosity",
+      "volume",
+      "yield_stress",
+      "other"
+    ],
+    "rheology_modifier_type_list": [
+      "rheology_modifier_unspecified",
+      "viscosity_modifying_admixture",
+      "cellulose_ether",
+      "welan_gum",
+      "xanthan_gum",
+      "starch_based",
+      "silica_based",
+      "nanoclay_based",
+      "attapulgite_clay",
+      "bentonite_based",
+      "biopolymer_based",
+      "synthetic_polymer_based",
+      "polyacrylamide_based",
+      "diutan_gum",
+      "other",
+      "unknown"
+    ],
+    "source_type_list": [
+      "book_chapter",
+      "conference_paper",
+      "dataset",
+      "journal_article",
+      "phd_thesis",
+      "report",
+      "other"
+    ],
+    "specimen_geometry_type_list": [
+      "cube",
+      "cylinder",
+      "dogbone",
+      "ell_shape",
+      "notched_cylinder",
+      "notched_prism",
+      "double_notched_prism",
+      "pci_double_tee_10ft",
+      "pci_double_tee_12ft",
+      "pci_double_tee_8ft",
+      "prism",
+      "aashto_bulb_tee_BT54",
+      "aashto_bulb_tee_BT63",
+      "aashto_bulb_tee_BT72",
+      "aashto_girder_type_I",
+      "aashto_girder_type_II",
+      "aashto_girder_type_III",
+      "aashto_girder_type_IV",
+      "aashto_girder_type_V",
+      "aashto_girder_type_VI"
+    ],
+    "structural_form_list": [
+      "arch",
+      "beam",
+      "column",
+      "slab",
+      "wall",
+      "other"
+    ],
+    "superplasticizer_type_list": [
+      "superplasticizer_unspecified",
+      "melamine_sulfonate",
+      "naphthalene_sulfonate",
+      "polycarboxylate_ether",
+      "polycarboxylate_modified",
+      "other",
+      "unknown"
+    ],
+    "test_parameters_list": [
+      "bending_span",
+      "shear_span",
+      "axial_eccentricity",
+      "other"
+    ],
+    "test_type_list": [
+      "accelerated_carbonation_test",
+      "axial_test",
+      "biaxial_compression_test",
+      "blast_test",
+      "chloride_profile_grinding",
+      "concrete_pullout_bond_test",
+      "corrosion_damaged_beam_test",
+      "creep_axial_compression_test",
+      "creep_bending_test",
+      "cyclic_lateral_test",
+      "direct_tensile_test",
+      "double_punch_test",
+      "drop_weight_impact_test",
+      "eccentric_axial_compression_test",
+      "electrical_resistivity_test",
+      "expansion_measurement",
+      "fiber_pullout_test",
+      "flow_through_leaching_test",
+      "four_point_bending_test",
+      "fully_adiabatic_calorimetry_test",
+      "gas_permeability_test",
+      "gap_test",
+      "hammer_test",
+      "heat_evolution_test",
+      "heat_of_hydration_test",
+      "hydrostatic_test",
+      "ICP_analysis_test",
+      "immersion_in_acid_test",
+      "immersion_in_deionized_water_test",
+      "interface_shear_transfer_test",
+      "length_change_test",
+      "linear_polarization_resistance_LPR",
+      "mercury_intrusion_porosimetry_test",
+      "mini_slump_test",
+      "modulus_of_rupture_test",
+      "noru_mohammed_test",
+      "nuclear_magnetic_resonance_test",
+      "punching_shear_test",
+      "rate_of_absorption_of_water_test",
+      "reactivity_of_scm_test",
+      "rebound_number_test",
+      "rotational_rheometry_test",
+      "scanning_electron_microscopy_test",
+      "scaling_resistance_test",
+      "semi_adiabatic_calorimetry_test",
+      "shear_friction_test",
+      "slump_flow_test",
+      "slump_test",
+      "splitting_tensile_test",
+      "surface_resistivity_test",
+      "tension_chord_test",
+      "thermal_diffusivity_test",
+      "thermogravimetric_analysis_test",
+      "three_point_bending_test",
+      "time_of_setting_test",
+      "torsion_compression_test",
+      "torsion_test",
+      "triaxial_test",
+      "true_triaxial_test",
+      "ultrasonic_pulse_velocity_test",
+      "uniaxial_strain_test",
+      "unconfined_compression_test",
+      "v_funnel_test",
+      "vane_shear_test",
+      "water_penetration_test",
+      "wedge_splitting_test",
+      "XRD_Rietveld_analysis_test",
+      "AASHTO_T325",
+      "AASHTO_T336",
+      "AC434",
+      "ASTM_A944/A944M",
+      "ASTM_C1074",
+      "ASTM_C1152",
+      "ASTM_C1202",
+      "ASTM_C1218",
+      "ASTM_C1260",
+      "ASTM_C1293",
+      "ASTM_C138/C138M",
+      "ASTM_C143/C143M",
+      "ASTM_C1556",
+      "ASTM_C157/C157M",
+      "ASTM_C1585",
+      "ASTM_C1609/C1609M",
+      "ASTM_C1611/C1611M",
+      "ASTM_C1679",
+      "ASTM_C1702",
+      "ASTM_C173/C173M",
+      "ASTM_C1876",
+      "ASTM_C1897",
+      "ASTM_C191",
+      "ASTM_C231/C231M",
+      "ASTM_C293/C293M",
+      "ASTM_C311",
+      "ASTM_C39/C39M",
+      "ASTM_C403/C403M",
+      "ASTM_C469/C469M",
+      "ASTM_C496/C496M",
+      "ASTM_C512/C512M",
+      "ASTM_C531",
+      "ASTM_C597",
+      "ASTM_C642",
+      "ASTM_C666/C666M",
+      "ASTM_C672/C672M",
+      "ASTM_C78/C78M",
+      "ASTM_C7957/D7957M",
+      "ASTM_C805/C805M",
+      "ASTM_D7958/D7958M",
+      "ASTM_D8337/D8337M",
+      "EN_12350-2",
+      "EN_12350-6",
+      "EN_12350-7",
+      "EN_12350-8",
+      "EN_12350-9",
+      "EN_12390-13",
+      "EN_12390-16",
+      "EN_12390-17",
+      "EN_12390-3",
+      "EN_12390-6",
+      "EN_12390-8",
+      "EN_12504-2",
+      "EN_12504-4",
+      "EN_14630",
+      "EN_14651",
+      "NT_Build_492",
+      "RILEM_RC6",
+      "RILEM_TC_162-TDF",
+      "RILEM_TC_50-FMC",
+      "USACE_CRD-C124",
+      "USACE_CRD-C36",
+      "USACE_CRD-C39-81"
+    ],
+    "thermal_boundary_condition_list": [
+      "insulated",
+      "uninsulated",
+      "unknown"
+    ],
+    "units_type_list": [
+      "-",
+      "%",
+      "permille",
+      "vol_percent",
+      "ppm",
+      "ppb",
+      "unitless",
+      "dimensionless",
+      "not_applicable",
+      "unknown",
+      "true_false",
+      "count",
+      "counts",
+      "cycles",
+      "0_255",
+      "microstrain",
+      "nm",
+      "um",
+      "mm",
+      "cm",
+      "dm",
+      "m",
+      "km",
+      "in",
+      "ft",
+      "yd",
+      "px",
+      "um_pixel",
+      "mm_pixel",
+      "dpi",
+      "ppi",
+      "mm2",
+      "cm2",
+      "m2",
+      "in2",
+      "ft2",
+      "mm3",
+      "cm3",
+      "m3",
+      "mL",
+      "L",
+      "in3",
+      "ft3",
+      "m4",
+      "mm4",
+      "cm4",
+      "in4",
+      "rad",
+      "mrad",
+      "deg",
+      "ns",
+      "us",
+      "ms",
+      "s",
+      "min",
+      "h",
+      "day",
+      "week",
+      "month",
+      "year",
+      "unix_timestamp",
+      "ISO8601",
+      "yyyy-mm-dd",
+      "yyyy-mm-dd_hh-mm-ss",
+      "Hz",
+      "kHz",
+      "MHz",
+      "GHz",
+      "rad_s",
+      "ug",
+      "mg",
+      "g",
+      "kg",
+      "ton",
+      "lb",
+      "slug",
+      "mol",
+      "mmol",
+      "umol",
+      "mN",
+      "N",
+      "kN",
+      "MN",
+      "lbf",
+      "kip",
+      "N_mm",
+      "N_m",
+      "kN_mm",
+      "kN_m",
+      "MN_m",
+      "lbf_ft",
+      "kip_ft",
+      "N_s",
+      "kN_s",
+      "N_s_mm",
+      "kN_s_mm",
+      "N_s_m",
+      "kN_s_m",
+      "Pa",
+      "kPa",
+      "MPa",
+      "GPa",
+      "bar",
+      "atm",
+      "psi",
+      "ksi",
+      "N_mm2",
+      "kN_mm2",
+      "N_m2",
+      "kN_m2",
+      "MN_m2",
+      "MPa_sqrt_m",
+      "ksi_sqrt_in",
+      "MPa_s",
+      "GPa_s",
+      "MPa_per_s",
+      "GPa_per_s",
+      "1_s",
+      "1_min",
+      "1_h",
+      "1_day",
+      "1_year",
+      "1_mm",
+      "1_m",
+      "1_N",
+      "1_K",
+      "1_GPa",
+      "mm_s",
+      "cm_s",
+      "m_s",
+      "km_s",
+      "km_h",
+      "in_s",
+      "ft_s",
+      "fps",
+      "mm_s2",
+      "cm_s2",
+      "m_s2",
+      "g_acceleration",
+      "kg_m3",
+      "g_cm3",
+      "Mg_m3",
+      "lb_ft3",
+      "g_mm3",
+      "kg_L",
+      "degC",
+      "K",
+      "F",
+      "delta_C",
+      "delta_K",
+      "delta_F",
+      "kg_kg",
+      "g_g",
+      "kg_m",
+      "kg_m2",
+      "kg_s",
+      "kg_min",
+      "kg_h",
+      "kg_m_s",
+      "kg_m2_s",
+      "m3_kg",
+      "cm3_g",
+      "mL_g",
+      "L_kg",
+      "m2_kg",
+      "mol_L",
+      "mmol_L",
+      "mol_m3",
+      "mmol_m3",
+      "kg_mol",
+      "g_mol",
+      "mg_L",
+      "g_L",
+      "pH",
+      "mJ",
+      "J",
+      "kJ",
+      "MJ",
+      "aJ",
+      "fJ",
+      "pJ",
+      "Wh",
+      "kWh",
+      "BTU",
+      "cal",
+      "kcal",
+      "J_g",
+      "J_kgK",
+      "kJ_kg",
+      "kJ_kgK",
+      "cal_gC",
+      "J_K",
+      "kJ_K",
+      "J_m3",
+      "kJ_m3",
+      "MJ_m3",
+      "J_m2",
+      "J_mm2",
+      "N_mm_mm2",
+      "kN_mm_mm2",
+      "N_m_m2",
+      "kN_m_m2",
+      "mW",
+      "W",
+      "kW",
+      "MW",
+      "hp",
+      "W_m2",
+      "kW_m2",
+      "W_mK",
+      "mW_mmK",
+      "m2K_W",
+      "m2_s",
+      "mm2_s",
+      "Pa_s",
+      "mPa_s",
+      "cP",
+      "cSt",
+      "darcy",
+      "mm_sqrt_s",
+      "mm_sqrt_h",
+      "m_sqrt_s",
+      "S_m",
+      "mS_cm",
+      "ohm",
+      "kohm",
+      "Mohm",
+      "ohm_m",
+      "ohm_cm",
+      "kohm_cm",
+      "uV",
+      "mV",
+      "V",
+      "kV",
+      "uA",
+      "mA",
+      "A",
+      "kA",
+      "A_m2",
+      "C_electric",
+      "mC",
+      "Ah",
+      "pF",
+      "nF",
+      "uF",
+      "F_electric",
+      "uH",
+      "mH",
+      "H",
+      "T",
+      "mT",
+      "gauss",
+      "Wb",
+      "Gy",
+      "mGy",
+      "Sv",
+      "lux",
+      "dB",
+      "L_s",
+      "L_min",
+      "m3_s",
+      "m3_h",
+      "mm_N",
+      "m_N",
+      "mm_mm",
+      "m_m",
+      "percent_per_day",
+      "percent_per_year",
+      "microstrain_per_s",
+      "microstrain_per_day",
+      "HV",
+      "HB",
+      "HRC",
+      "USD",
+      "EUR",
+      "GBP",
+      "JPY",
+      "CNY",
+      "kg_CO2e",
+      "ton_CO2e",
+      "eco_points",
+      "mm_year",
+      "um_year",
+      "kbps",
+      "Mbps",
+      "Gbps"
+    ],
+    "water_reducer_type_list": [
+      "water_reducer_unspecified",
+      "normal_range_water_reducer",
+      "mid_range_water_reducer",
+      "set_retarding_water_reducer",
+      "set_accelerating_water_reducer",
+      "lignosulfonate",
+      "hydroxycarboxylic_acid",
+      "carbohydrate_based",
+      "other",
+      "unknown"
+    ],
+    "yes_no_list": [
+      "yes",
+      "no",
+      "unknown"
+    ],
+    "extraction_method": [
+      "direct",
+      "digitized",
+      "computed"
+    ],
+    "device_type": [
+      "none",
+      "load_cell",
+      "LVDT",
+      "clip_gauge",
+      "extensometer",
+      "strain_gauge",
+      "CMOD_gauge",
+      "CTOD_gauge",
+      "DIC",
+      "laser_sensor",
+      "laser_displacement_sensor",
+      "thermocouple",
+      "temperature_sensor",
+      "humidity_sensor",
+      "pressure_sensor",
+      "camera",
+      "high_speed_camera",
+      "microscope",
+      "crosshead_displacement",
+      "balance",
+      "data_logger",
+      "unknown"
+    ],
+    "plot_type": [
+      "stress_strain",
+      "load_displacement",
+      "load_CMOD",
+      "load_deflection",
+      "stress_CMOD",
+      "moment_curvature",
+      "force_drift",
+      "other"
+    ],
+    "axis_type": [
+      "linear_linear",
+      "linear_log",
+      "log_linear",
+      "log_log"
+    ],
+    "figure_type": [
+      "plot",
+      "photo",
+      "SEM_image",
+      "schematic",
+      "diagram",
+      "table_image",
+      "other"
+    ],
+    "model_family": [
+      "elastic",
+      "plasticity",
+      "damage",
+      "damage_plasticity",
+      "fracture",
+      "cohesive_zone",
+      "microplane",
+      "cap_model",
+      "hypoplasticity",
+      "viscoelastic",
+      "viscoplastic",
+      "rate_dependent",
+      "multiphysics",
+      "other"
+    ],
+    "model_role": [
+      "reported",
+      "calibrated",
+      "validated",
+      "compared",
+      "proposed",
+      "implemented",
+      "other"
+    ],
+    "parameter_origin": [
+      "reported",
+      "calibrated",
+      "fitted",
+      "derived",
+      "assumed",
+      "default",
+      "unknown"
+    ],
+    "review_status": [
+      "unreviewed",
+      "machine_checked",
+      "human_reviewed",
+      "accepted",
+      "rejected"
+    ]
+  },
+  "foreign_keys": {
+    "data.device_id": "devices_and_supports",
+    "data.source_id": "literature_sources",
+    "data.test_id": "tests",
+    "data.x_device_id": "devices_and_supports",
+    "data.y_device_id": "devices_and_supports",
+    "devices_and_supports.source_id": "literature_sources",
+    "devices_and_supports.test_id": "tests",
+    "geometries.source_id": "literature_sources",
+    "keywords.source_id": "literature_sources",
+    "loading_histories.device_id": "devices_and_supports",
+    "loading_histories.source_id": "literature_sources",
+    "loading_histories.test_id": "tests",
+    "material_batches.source_id": "literature_sources",
+    "printing_variables.geometry_id": "geometries",
+    "printing_variables.source_id": "literature_sources",
+    "reinforcement_components.reinforcement_layout_id": "reinforcement_layouts",
+    "reinforcement_components.reinforcement_material_id": "reinforcement_materials",
+    "reinforcement_components.source_id": "literature_sources",
+    "reinforcement_layouts.geometry_id": "geometries",
+    "reinforcement_layouts.source_id": "literature_sources",
+    "reinforcement_materials.source_id": "literature_sources",
+    "specimens.batch_id": "material_batches",
+    "specimens.geometry_id": "geometries",
+    "specimens.printing_variables_id": "printing_variables",
+    "specimens.reinforcement_layout_id": "reinforcement_layouts",
+    "specimens.source_id": "literature_sources",
+    "tests.source_id": "literature_sources",
+    "tests.specimen_id": "specimens"
+  }
+}

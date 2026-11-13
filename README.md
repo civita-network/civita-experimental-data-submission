@@ -2,7 +2,6 @@
 
 Tools for preparing experimental concrete research data for the CIVITA database. This repository includes the **CIVITA v9.02 browser application** and the **digitize skill**, a supplement to **Personal AI and Direct JSON submission** for extracting tables and plot data from research papers.
 
-Authors: M.Z. Naser, Gianluca Cusatis, and Jiaqi Liu.
 
 ## Start here
 

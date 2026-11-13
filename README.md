@@ -1,6 +1,6 @@
 # CIVITA Experimental Data Submission
 
-Tools for preparing experimental concrete research data for the CIVITA database. This repository includes the **CIVITA v9.02 browser application** and the **digitize skill** for extracting tables and plot data from research papers.
+Tools for preparing experimental concrete research data for the CIVITA database. This repository includes the **CIVITA v9.02 browser application** and the **digitize skill**, a supplement to **Personal AI and Direct JSON submission** for extracting tables and plot data from research papers.
 
 Authors: M.Z. Naser, Gianluca Cusatis, and Jiaqi Liu.
 
@@ -9,7 +9,7 @@ Authors: M.Z. Naser, Gianluca Cusatis, and Jiaqi Liu.
 | What you want to do | Where to start |
 | --- | --- |
 | Enter data or review an existing dataset | [CIVITA v9.02 application](CIVITA-v9.02/) |
-| Extract tables and curves using your own AI coding assistant | [Digitize skill](digitize-skill/README.md) |
+| Use your own AI coding assistant for Personal AI and Direct JSON submission | [Supplementary digitize skill](digitize-skill/README.md) |
 | Upload AI-generated JSON for validation and submission | Open CIVITA and choose **Personal AI and Direct JSON submission** |
 | Read the full application instructions | [CIVITA user guide](CIVITA-v9.02/docs/USER-GUIDE.md) |
 
@@ -40,9 +40,9 @@ Select an entry option, enter your institution, full name, and email, then press
 - The separate toolbar **Export** and **Validate** buttons have been removed. Internal validation remains active, and **Validate JSON** remains available in the Personal AI portal.
 - The separate **JSON** and **CSVs** download controls remain available.
 
-## 2. Extract data with the digitize skill
+## 2. Supplementary digitize skill for Personal AI and Direct JSON submission
 
-The [digitize skill](digitize-skill/) contains instructions, a data schema, and Python scripts for PDF inspection, table extraction, curve digitization, and database-file generation. Use an AI coding assistant that can read local files and run Python commands. See the [skill README](digitize-skill/README.md) for tool-specific setup and limitations.
+The [digitize skill](digitize-skill/) supplements the **Personal AI and Direct JSON submission** option. It helps you prepare `concrete_database.json` with your own AI tools, then bring the results into CIVITA. It contains instructions, a data schema, and Python scripts for PDF inspection, table extraction, curve digitization, and database-file generation. Use an AI coding assistant that can read local files and run Python commands. See the [skill README](digitize-skill/README.md) for tool-specific setup and limitations.
 
 ### Set up the Python tools
 
@@ -75,35 +75,7 @@ python digitize-skill/scripts/build_output.py paper_digitized/draft.json paper_d
 
 **Review the results before submitting.** Check overlay images against the original curves, compare extracted tables with the PDF, and resolve flagged cells and warnings. Do not treat a successful build as proof that every extracted measurement is correct.
 
-## 3. Load the results into CIVITA
-
-1. Open CIVITA v9.02, select **Personal AI and Direct JSON submission**, and press **Start**.
-2. Choose the generated **`concrete_database.json`** file. Do not upload `draft.json`, a curve-only JSON file, or `digitize_state.json` as the submission dataset.
-3. Press **Validate JSON**. Validation stays in the browser and does not submit or load the file.
-4. Correct reported errors with your assistant, upload the corrected JSON, and validate again. Review warnings against the source paper.
-5. Press **Load validated JSON**. The app applies its existing single-source and import-conflict checks.
-6. Choose **Review workspace** to inspect the imported records. The mode chip in the header lets you return to the portal.
-7. If central submission is configured, use **Submit loaded JSON to central DB** and review the confirmation. If submission is unavailable, use **Save** to keep a ZIP backup or **JSON** to download the dataset, and follow the coordinator's delivery instructions.
-
-The submission file must contain a top-level `db` object with known table names and arrays of records. IDs must be unique and references must point to included records. Work on **one paper per dataset**; save current work before clearing it or loading another source.
-
-## 4. Printing data in v9.02
-
-The Geometries, Specimens, and Tests schemas are unchanged. The updated Printing Variables fields include:
-
-| Field | Meaning |
-| --- | --- |
-| `volumetric_flow_rate_mm3_sec` | Volumetric flow rate in mm³/s |
-| `nozzle_orientation` | Descriptive orientation, including angle units where applicable |
-| `nozzle_length_mm` | Nozzle length in mm |
-| `nozzle_diameter_mm` | Nozzle diameter in mm |
-| `hose_length_mm` | Hose length in mm |
-
-Older flow-rate and hose-length fields are converted when plain numeric values can be interpreted safely. Legacy values are preserved in JSON metadata, and values requiring manual conversion are flagged. Review the migration of `nozzle_size_mm` to diameter against your source; do not assume it represents nozzle length.
-
-Use the [v9.02 schema reference](CIVITA-v9.02/docs/civita-schema-v9.02.json) for the current application fields. The skill also has its own [builder schema](digitize-skill/schema/civita_schema.json); if skill output uses older printing fields, validate it in v9.02 and review the migration warnings. See the [user guide](CIVITA-v9.02/docs/USER-GUIDE.md) for the complete conversion rules.
-
-## 5. Keep backups and stable record IDs
+## 3. Keep backups and stable record IDs
 
 - Keep one skill output folder per paper and reuse it for corrections.
 - Keep **`digitize_state.json`**: it preserves record IDs across rebuilds. It is not the submission file.

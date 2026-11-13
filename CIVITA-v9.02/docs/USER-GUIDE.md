@@ -11,7 +11,7 @@ Use the mode chip in the header to return to the choice screen. In Personal AI/J
 
 ## Existing datasets
 
-Choose **Manual data submission from existing datasets**. Create parent records before their children, following the links shown by the form. For example, create a source, material batch, and geometry before linking specimens; link tests to their specimens. A printing record links to its source and geometry, and a specimen can link to a printing record.
+Choose **Manual entry of existing datasets**. Create parent records before their children, following the links shown by the form. For example, create a source, material batch, and geometry before linking specimens; link tests to their specimens. A printing record links to its source and geometry, and a specimen can link to a printing record.
 
 The Geometries, Specimens, and Tests schemas are unchanged in v9.02. Printing fields use the updated template:
 
@@ -38,7 +38,7 @@ When restoring or loading old JSON, CIVITA upgrades older printing fields:
 - `nozzle_orientation_angle_deg` becomes `nozzle_orientation` with a `deg` suffix.
 - `deliver_method` is retained in legacy JSON metadata, rather than an active table column.
 
-Original legacy values are kept in saved JSON metadata. Existing nonempty values in the new fields take precedence. Ranges or unit-bearing text that cannot be converted automatically are retained in metadata and flagged by **Validate**; enter the correct value in the new unit field. Review all conversions against your source.
+Original legacy values are kept in saved JSON metadata. Existing nonempty values in the new fields take precedence. Ranges or unit-bearing text that cannot be converted automatically are retained in metadata and flagged by internal validation; enter the correct value in the new unit field. Review all conversions against your source.
 
 ## Personal AI and Direct JSON submission
 
@@ -48,10 +48,14 @@ Original legacy values are kept in saved JSON metadata. Existing nonempty values
 4. Use [the v9.02 schema](civita-schema-v9.02.json) as the current submission field reference, especially if older skill output uses the previous printing fields.
 5. Request a JSON file with a top-level `db` object mapping known table names to arrays of records. Include exactly one source paper. Keep IDs unique and all referenced records in the file.
 6. Choose the JSON file and press **Validate JSON**. Validation does not send or load your dataset. Correct reported errors and upload the revised file; review warnings.
-7. Press **Load validated JSON**. Import preserves the existing merge/conflict and single-source checks. Save/export other work before attempting to load a different source.
+7. Press **Load validated JSON**. Import preserves the existing merge/conflict and single-source checks. Save other work before attempting to load a different source.
 8. Select **Review workspace** to check the data. Return to the portal through the mode chip.
 9. When central submission is configured, use **Submit loaded JSON to central DB** and review the app's confirmation. Uploading or validating a file alone does not submit it.
 
 ## Save and transfer
 
-Use **Save** or JSON export regularly. Browser storage belongs to the current browser origin; the local HTML file and hosted GitHub Pages app do not share that storage. Load an exported JSON file to transfer work. Keep copies of your original source files and exported backups.
+Use **Save** regularly. It stores work in this browser and downloads `CIVITA-package.zip` containing JSON, CSVs, attachments, imported values, and record links. Extract `concrete_database.json` from the ZIP before using **Load**. The separate **JSON** download remains available. Browser storage belongs to the current browser origin; the local HTML file and hosted GitHub Pages app do not share that storage. Load an exported JSON file to transfer work. Keep copies of your original source files and exported backups.
+
+## Toolbar updates
+
+The toolbar has **Save**, **Load**, and **Submit**. The separate **Export** and **Validate** toolbar buttons have been removed. Save includes the former Export ZIP package. Data checks remain active internally; the Personal AI portal still provides **Validate JSON**. Submit remains visible and explains when central database configuration is missing.

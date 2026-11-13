@@ -670,24 +670,24 @@ try {
     <button type="button" class="ml-card" data-mode="manual">
       <span class="ml-body">
         <span class="ml-icon">&#9998;</span>
-        <span class="ml-title">Manual data extraction and data submission</span>
+        <span class="ml-title">Manual data extraction and digitization</span>
         <span class="ml-desc">You have the papers. You read them and type the values into the sheet yourself, and you can hand-digitize figure curves. No AI is used at any step.</span>
-        <span class="ml-pick">Work this way &#8594;</span>
-      </span>
-    </button>
-    <button type="button" class="ml-card" data-mode="llm">
-      <span class="ml-body">
-        <span class="ml-icon">&#10024;</span>
-        <span class="ml-title">AI-assisted data extraction and submission</span>
-        <span class="ml-desc">Extract data from papers with AI, then review and submit the results. Choose a model and enter your API key to get started.</span>
         <span class="ml-pick">Work this way &#8594;</span>
       </span>
     </button>
     <button type="button" class="ml-card" data-mode="webform">
       <span class="ml-body">
         <span class="ml-icon">&#9776;</span>
-        <span class="ml-title">Manual data submission from existing datasets</span>
+        <span class="ml-title">Manual entry of existing datasets</span>
         <span class="ml-desc">You already have the numbers, from your own tests or a dataset you keep. Enter them one record at a time through a guided form. No PDFs needed.</span>
+        <span class="ml-pick">Work this way &#8594;</span>
+      </span>
+    </button>
+    <button type="button" class="ml-card" data-mode="llm">
+      <span class="ml-body">
+        <span class="ml-icon">&#10024;</span>
+        <span class="ml-title">Local AI data extraction</span>
+        <span class="ml-desc">Extract data from papers with AI, then review and submit the results. Choose a model and enter your API key to get started.</span>
         <span class="ml-pick">Work this way &#8594;</span>
       </span>
     </button>
@@ -1574,14 +1574,12 @@ body.skin-instrument #btnHdrMore, body.skin-vitrine #btnHdrMore {
   <button id="btnCost" class="llm-only">$</button>
   <label id="rememberPdfsLabel" title="OFF by default. When on, PDFs loaded in this browser (for extraction OR manual digitizing) are kept (IndexedDB) so a page refresh doesn't lose them. Your data is always saved regardless of this setting." style="display:flex;align-items:center;gap:4px;font-size:11px;color:var(--c-b8c8dc, #c4c4ce);cursor:pointer;white-space:nowrap;"><input type="checkbox" id="rememberPdfs"> Remember PDFs</label>
   <button id="clearPdfsBtn" title="Delete the PDFs cached in this browser for refresh-recovery. Does NOT touch your data.">Clear cached PDFs</button>
-  <button id="btnSave" title="Save your work. Keeps it in this browser AND downloads a copy with attachments as one file (concrete_database.json) that you can load back into CIVITA later.">Save</button>
+  <button id="btnSave" title="Save your work in this browser and download CIVITA-package.zip with dataset JSON, table CSVs, attachments, imported values, and record links. Extract concrete_database.json from the ZIP to load it later.">Save</button>
   <button id="btnMerge" title="Load one source from a concrete_database.json file, restoring records and embedded attachments. A different source requires exporting and clearing the current dataset first. Its records are ADDED to what is already here -- nothing you have is overwritten or deleted. Loading the same file twice changes nothing. If a record has the same ID but different contents, the whole file is refused rather than quietly overwrite your version. JSON only; embedded attachments are restored locally. No network or AI.">Load</button>
-  <button id="btnValidate" title="Run data-quality checks across all tables: missing required values, out-of-range numbers, and broken links between sources, tests, batches and models. Each row gets a green/yellow/red flag; click a flag to see its issues.">Validate</button>
-  <button id="btnPackage" type="button" title="Download dataset JSON, table CSVs, original attachments, imported values, and their record links as one ZIP.">Export</button>
   <button id="btnLogs">Logs</button>
   <button id="btnJSON" title="Download the entire database (all tables, uploaded attachments, imported values, and extraction telemetry) as a single concrete_database.json file — a complete machine-readable backup you can re-import or share.">JSON</button>
   <button id="btnCSVs" title="Download each table as its own .csv spreadsheet file.">CSVs</button>
-  <button id="btnSubmit" style="background:var(--accent-fill,#0d9488);border-color:var(--accent-dark,#0f766e);color:var(--on-accent,#fff);font-weight:600;" title="Submit your extracted DATA (JSON only — your PDFs never leave this browser) to the committee's central database. Requires a contributor profile. New records are added; records already in the central DB are skipped automatically (idempotent). Reading the central data back is disabled by design; corrections go through the coordinator. Needs network. Hidden until the manager configures the database.">Submit to central DB</button>
+  <button id="btnSubmit" style="background:var(--accent-fill,#0d9488);border-color:var(--accent-dark,#0f766e);color:var(--on-accent,#fff);font-weight:600;" title="Submit your extracted DATA (JSON only — your PDFs never leave this browser) to the committee's central database. Requires a contributor profile. New records are added; records already in the central DB are skipped automatically (idempotent). Reading the central data back is disabled by design; corrections go through the coordinator. Needs network and a configured central database.">Submit</button>
   <button id="btnClear">Clear</button>
   <button id="btnHelp" title="Open the CIVITA v9 manual inside this page: every control, all three input modes, the figure digitizer, the validation rules, the exports and a troubleshooting section. Nothing is downloaded and no network is used.">Help</button>
   <button id="btnTheme" title="Toggle light / dark theme">&#9728; Light</button>
@@ -2180,7 +2178,7 @@ body.skin-instrument #btnHdrMore, body.skin-vitrine #btnHdrMore {
 <p>The header changes with the mode: the API key box (one box, matching the chosen model), the model drop-down, <b class="hp-btn">+ Add PDFs</b>, <b class="hp-btn">$</b> and the two audit buttons appear only in AI-assisted mode, and <b class="hp-btn">Load PDF (digitize only)</b> appears in Manual and Webform modes. Nothing has been removed &mdash; it is hidden because it does not apply.</p>
 <h2 id="hp-sec-controls"><span class="hp-num">3</span> The workspace: every control explained</h2>
 <h3 id="hp-xs270"><span class="hp-num">3.1</span> The header bar</h3>
-<div class="hp-tw"><table><thead><tr><th><strong>Control</strong></th><th><strong>Mode</strong></th><th><strong>What it does</strong></th></tr></thead><tbody><tr><td><b class="hp-btn">Anthropic API Key</b></td><td>AI</td><td>Your key for Claude models; shown while a Claude model is selected. Stored in this browser only.</td></tr><tr><td><b class="hp-btn">OpenAI API Key</b></td><td>AI</td><td>Your key for GPT models; shown while a GPT model is selected. Stored in this browser only.</td></tr><tr><td>Model drop-down</td><td>AI</td><td>Which model runs the extraction. Prices in the label are input/output dollars per million tokens (Section&nbsp;<a href="#hp-sec-cost">3.2</a>).</td></tr><tr><td>Status dot</td><td>AI</td><td>Idle / busy / error indicator for the extraction pipeline.</td></tr><tr><td><b class="hp-btn">Set contributor</b></td><td>all</td><td>Your identity and ID prefix (Section&nbsp;<a href="#hp-sec-contributor">2.3</a>). Once a profile exists the button shows the prefix itself.</td></tr><tr><td>Build badge</td><td>all</td><td>A gold <strong>Manager</strong> or silver <strong>Contributor</strong> pill beside the contributor button, saying which copy of CIVITA you are holding (Section&nbsp;<a href="#hp-sec-submit">9.3</a>).</td></tr><tr><td>Mode toggle</td><td>all</td><td>Manual / AI-assisted / Webform. It is hidden once you have chosen a mode on the opening screen; the choice is remembered for next time.</td></tr><tr><td><b class="hp-btn">+ Add Row</b></td><td>Manual</td><td>Adds one blank record to the current table and mints its ID. In webform mode the equivalent control is the <b class="hp-btn">+ Add &hellip;</b> button at the bottom of the card list. AI-assisted mode has no add-row control: switch to Manual or Webform from the modality chip to add a record the extraction missed.</td></tr><tr><td><b class="hp-btn">Load PDF (digitize only)</b></td><td>Manual, Webform</td><td>Loads a PDF and creates a source row for it <em>without</em> running any AI, so you can trace its figures by hand (Section&nbsp;<a href="#hp-sec-digitizeonly">4.6</a>).</td></tr><tr><td><b class="hp-btn">+ Add PDFs</b></td><td>AI</td><td>Stages PDFs for extraction. Opens the staging panel.</td></tr><tr><td><b class="hp-btn">Validate</b></td><td>all</td><td>Runs every data-quality check and flags every row. Click a line in the summary band it paints to read that source's issues (Section&nbsp;<a href="#hp-sec-validate">8</a>).</td></tr><tr><td><b class="hp-btn">Check specimens</b></td><td>AI</td><td>Optional audit: looks for specimen IDs that appear in the PDF text but not in your extraction (Section&nbsp;<a href="#hp-sec-audits">5.7</a>).</td></tr><tr><td><b class="hp-btn">Check citations</b></td><td>AI</td><td>Optional audit: confirms that values citing a page really do appear on that page (Section&nbsp;<a href="#hp-sec-audits">5.7</a>).</td></tr><tr><td><b class="hp-btn">$</b></td><td>AI</td><td>Shows or hides the cost panel. Both the button and the panel exist only in AI-assisted mode &mdash; every figure in the panel counts AI extraction work.</td></tr><tr><td><b class="hp-btn">Remember PDFs</b></td><td>Manual, AI</td><td>Off by default. When on, loaded PDFs are cached in this browser so a refresh does not lose them. Your <em>data</em> is saved either way. Hidden in the webform, which never loads a PDF.</td></tr><tr><td><b class="hp-btn">Clear cached PDFs</b></td><td>Manual, AI</td><td>Deletes those cached PDF bytes. Does not touch your data. Hidden in the webform for the same reason.</td></tr><tr><td><b class="hp-btn">Save</b></td><td>all</td><td>Commits your work to this browser <em>and</em> downloads it as one file (Section&nbsp;<a href="#hp-sec-save">9.1</a>).</td></tr><tr><td><b class="hp-btn">Load</b></td><td>all</td><td>Reads a saved file back in, adding its records to what you already have (Section&nbsp;<a href="#hp-sec-load">9.2</a>).</td></tr><tr><td><b class="hp-btn">Submit</b></td><td>all</td><td>Sends your data to the committee's central database (Section&nbsp;<a href="#hp-sec-submit">9.3</a>). Hidden entirely until a manager has configured the database address.</td></tr><tr><td><b class="hp-btn">Logs</b></td><td>all</td><td>Shows or hides the running log panel.</td></tr><tr><td><b class="hp-btn">Clear</b></td><td>all</td><td>Deletes everything, including the saved API key.</td></tr><tr><td><b class="hp-btn">Help</b></td><td>all</td><td>Opens this manual inside the page: a contents list, a filter box, and every section below. Nothing is downloaded and no network is used &mdash; the text is part of <code>CIVITA-v9.html</code>. Press <b class="hp-btn">Esc</b> or <b class="hp-btn">Close</b> to return to your data, which is left exactly as it was.</td></tr><tr><td><b class="hp-btn">Light</b> / <b class="hp-btn">Dark</b></td><td>all</td><td>Theme toggle.</td></tr><tr><td><b class="hp-btn">Appearance</b></td><td>all</td><td>The small square button beside the theme toggle. Picks the layout: <strong>CIVITA</strong> is the tab strip across the top; <strong>Instrument</strong> puts the tables in a grouped side rail with live row counts; <strong>Vitrine</strong> narrows that rail to a spine whose groups open on hover, and adds a <b class="hp-btn">Ctrl</b>+<b class="hp-btn">K</b> command palette for jumping to a table or running a toolbar action. Appearance only &mdash; it changes no data, no setting and no export, and works with either theme.</td></tr><tr><td><b class="hp-btn">Cancel</b></td><td>&mdash;</td><td>Hidden except while a run is in progress. Stops an extraction or a batch poll.</td></tr></tbody></table></div>
+<div class="hp-tw"><table><thead><tr><th><strong>Control</strong></th><th><strong>Mode</strong></th><th><strong>What it does</strong></th></tr></thead><tbody><tr><td><b class="hp-btn">Anthropic API Key</b></td><td>AI</td><td>Your key for Claude models; shown while a Claude model is selected. Stored in this browser only.</td></tr><tr><td><b class="hp-btn">OpenAI API Key</b></td><td>AI</td><td>Your key for GPT models; shown while a GPT model is selected. Stored in this browser only.</td></tr><tr><td>Model drop-down</td><td>AI</td><td>Which model runs the extraction. Prices in the label are input/output dollars per million tokens (Section&nbsp;<a href="#hp-sec-cost">3.2</a>).</td></tr><tr><td>Status dot</td><td>AI</td><td>Idle / busy / error indicator for the extraction pipeline.</td></tr><tr><td><b class="hp-btn">Set contributor</b></td><td>all</td><td>Your identity and ID prefix (Section&nbsp;<a href="#hp-sec-contributor">2.3</a>). Once a profile exists the button shows the prefix itself.</td></tr><tr><td>Build badge</td><td>all</td><td>A gold <strong>Manager</strong> or silver <strong>Contributor</strong> pill beside the contributor button, saying which copy of CIVITA you are holding (Section&nbsp;<a href="#hp-sec-submit">9.3</a>).</td></tr><tr><td>Mode toggle</td><td>all</td><td>Manual / AI-assisted / Webform. It is hidden once you have chosen a mode on the opening screen; the choice is remembered for next time.</td></tr><tr><td><b class="hp-btn">+ Add Row</b></td><td>Manual</td><td>Adds one blank record to the current table and mints its ID. In webform mode the equivalent control is the <b class="hp-btn">+ Add &hellip;</b> button at the bottom of the card list. AI-assisted mode has no add-row control: switch to Manual or Webform from the modality chip to add a record the extraction missed.</td></tr><tr><td><b class="hp-btn">Load PDF (digitize only)</b></td><td>Manual, Webform</td><td>Loads a PDF and creates a source row for it <em>without</em> running any AI, so you can trace its figures by hand (Section&nbsp;<a href="#hp-sec-digitizeonly">4.6</a>).</td></tr><tr><td><b class="hp-btn">+ Add PDFs</b></td><td>AI</td><td>Stages PDFs for extraction. Opens the staging panel.</td></tr><tr><td><b class="hp-btn">Check specimens</b></td><td>AI</td><td>Optional audit: looks for specimen IDs that appear in the PDF text but not in your extraction (Section&nbsp;<a href="#hp-sec-audits">5.7</a>).</td></tr><tr><td><b class="hp-btn">Check citations</b></td><td>AI</td><td>Optional audit: confirms that values citing a page really do appear on that page (Section&nbsp;<a href="#hp-sec-audits">5.7</a>).</td></tr><tr><td><b class="hp-btn">$</b></td><td>AI</td><td>Shows or hides the cost panel. Both the button and the panel exist only in AI-assisted mode &mdash; every figure in the panel counts AI extraction work.</td></tr><tr><td><b class="hp-btn">Remember PDFs</b></td><td>Manual, AI</td><td>Off by default. When on, loaded PDFs are cached in this browser so a refresh does not lose them. Your <em>data</em> is saved either way. Hidden in the webform, which never loads a PDF.</td></tr><tr><td><b class="hp-btn">Clear cached PDFs</b></td><td>Manual, AI</td><td>Deletes those cached PDF bytes. Does not touch your data. Hidden in the webform for the same reason.</td></tr><tr><td><b class="hp-btn">Save</b></td><td>all</td><td>Commits your work to this browser <em>and</em> downloads the full ZIP package with JSON, CSVs, attachments, and record links (Section&nbsp;<a href="#hp-sec-save">9.1</a>).</td></tr><tr><td><b class="hp-btn">Load</b></td><td>all</td><td>Reads a saved file back in, adding its records to what you already have (Section&nbsp;<a href="#hp-sec-load">9.2</a>).</td></tr><tr><td><b class="hp-btn">Submit</b></td><td>all</td><td>Sends your data to the committee's central database (Section&nbsp;<a href="#hp-sec-submit">9.3</a>). Hidden entirely until a manager has configured the database address.</td></tr><tr><td><b class="hp-btn">Logs</b></td><td>all</td><td>Shows or hides the running log panel.</td></tr><tr><td><b class="hp-btn">Clear</b></td><td>all</td><td>Deletes everything, including the saved API key.</td></tr><tr><td><b class="hp-btn">Help</b></td><td>all</td><td>Opens this manual inside the page: a contents list, a filter box, and every section below. Nothing is downloaded and no network is used &mdash; the text is part of <code>CIVITA-v9.html</code>. Press <b class="hp-btn">Esc</b> or <b class="hp-btn">Close</b> to return to your data, which is left exactly as it was.</td></tr><tr><td><b class="hp-btn">Light</b> / <b class="hp-btn">Dark</b></td><td>all</td><td>Theme toggle.</td></tr><tr><td><b class="hp-btn">Appearance</b></td><td>all</td><td>The small square button beside the theme toggle. Picks the layout: <strong>CIVITA</strong> is the tab strip across the top; <strong>Instrument</strong> puts the tables in a grouped side rail with live row counts; <strong>Vitrine</strong> narrows that rail to a spine whose groups open on hover, and adds a <b class="hp-btn">Ctrl</b>+<b class="hp-btn">K</b> command palette for jumping to a table or running a toolbar action. Appearance only &mdash; it changes no data, no setting and no export, and works with either theme.</td></tr><tr><td><b class="hp-btn">Cancel</b></td><td>&mdash;</td><td>Hidden except while a run is in progress. Stops an extraction or a batch poll.</td></tr></tbody></table></div>
 <h3 id="hp-sec-cost"><span class="hp-num">3.2</span> The cost panel</h3>
 <p>Click <b class="hp-btn">$</b> in AI-assisted mode. The button and the panel appear in that mode only: every counter below measures AI extraction work, so there is nothing for them to report when you are typing by hand or filling in cards. Ten counters, all cumulative for this browser:</p>
 <div class="hp-tw"><table><thead><tr><th><strong>Counter</strong></th><th><strong>Meaning</strong></th></tr></thead><tbody><tr><td>Total Spent</td><td>Dollars charged, computed from the token counts each call reports and the model's published price.</td></tr><tr><td>Total Saved (batch)</td><td>What you did not pay by using <b class="hp-btn">Batch</b> instead of <b class="hp-btn">Instant</b>.</td></tr><tr><td>Input Tokens / Output Tokens</td><td>Raw token totals.</td></tr><tr><td>PDFs Processed</td><td>Number of papers that completed extraction.</td></tr><tr><td>Avg $/PDF</td><td>Total spent divided by PDFs processed &mdash; the number to watch when deciding whether a cheaper model is good enough for your corpus.</td></tr><tr><td>Metadata Extractions</td><td>Phase-1 calls (the tabular data of a paper).</td></tr><tr><td>Figure Passes</td><td>Phase-2 calls. A single figure normally costs several passes.</td></tr><tr><td>Re-extractions</td><td>Automatic retries triggered by the quality policy.</td></tr><tr><td>Metadata Re-runs</td><td>Times you re-ran a paper's metadata yourself.</td></tr></tbody></table></div>
@@ -2342,11 +2340,11 @@ body.skin-instrument #btnHdrMore, body.skin-vitrine #btnHdrMore {
 <ol><li>Dangling links and missing required links first. One missing parent can be responsible for a dozen reds.</li><li>Duplicate keys next, for the same reason.</li><li>Missing required values.</li><li>Out-of-range numbers. Check the unit before changing the number; the number is usually right and the unit wrong.</li><li>Yellow vocabulary warnings last, in a single pass down each column.</li></ol>
 <h2 id="hp-xs1180"><span class="hp-num">9</span> Getting data out</h2>
 <h3 id="hp-sec-save"><span class="hp-num">9.1</span> Save</h3>
-<p><b class="hp-btn">Save</b> does two things in one click. It commits your work to this browser, and it downloads a copy as <code>concrete_database.json</code> &mdash; every table plus the extraction telemetry, in one machine-readable file. The button reads <em>Saved</em> for a moment afterwards, and the log records exactly what happened.</p>
+<p><b class="hp-btn">Save</b> does two things in one click. It commits your work to this browser, and it downloads <code>CIVITA-package.zip</code> containing dataset JSON, table CSVs, original attachments, imported values, and a manifest of their record links. Extract <code>concrete_database.json</code> from the ZIP to load it back into CIVITA. The button reads <em>Saved</em> for a moment afterwards, and the log records exactly what happened.</p>
 <p>That file is both your backup and your transport: it is what protects you against a browser that clears its storage, what you carry to another machine, and what you send to a coordinator.</p>
 <p class="hp-tip"><b>Tip.</b> Click <b class="hp-btn">Save</b> at the end of every working session, and keep the file somewhere outside the browser.</p>
 <p>Two outcomes are worth recognising, because in both of them half the job still succeeded:</p>
-<ul><li><strong>Saved to the browser, but no file downloaded.</strong> Two records share a join key, and CIVITA will not write a file that would corrupt someone else's dataset when it is combined later. It says so, and it says your work is safe. Run <b class="hp-btn">Validate</b>, fix the flagged rows, and click <b class="hp-btn">Save</b> again to get your file.</li><li><strong>File downloaded, but the browser store failed.</strong> Storage is full or disabled. The button reads <em>Downloaded</em> rather than <em>Saved</em>, and a message explains the failure. Keep that file &mdash; it is now your only copy.</li></ul>
+<ul><li><strong>Saved to the browser, but no file downloaded.</strong> Two records share a join key, and CIVITA will not write a file that would corrupt someone else's dataset when it is combined later. It says so, and it says your work is safe. Review the validation flags, fix the flagged rows, and click <b class="hp-btn">Save</b> again to get your file.</li><li><strong>File downloaded, but the browser store failed.</strong> Storage is full or disabled. The button reads <em>Downloaded</em> rather than <em>Saved</em>, and a message explains the failure. Keep that file &mdash; it is now your only copy.</li></ul>
 <h3 id="hp-sec-load"><span class="hp-num">9.2</span> Load</h3>
 <p><b class="hp-btn">Load</b> reads <code>concrete_database.json</code> files back in: the one you saved yesterday, the one you carried from another machine, or the several that different people send a coordinator. You can pick more than one file at once. It is JSON-only: no PDFs, no network, no API, no cost.</p>
 <p>Loading <em>adds</em>. Nothing already in your dataset is overwritten or deleted, so it is safe to load a file into work you are in the middle of.</p>
@@ -8705,19 +8703,20 @@ async function buildAttachmentPackage(snapshot, readFile) {
   return { blob: attachmentZip(entries), manifest: manifest };
 }
 async function exportAttachmentPackage() {
-  var btn = document.getElementById('btnPackage');
-  if (btn.disabled || !egressL005Guard()) return;
+  var btn = document.getElementById('btnSave');
+  if (!btn || btn.disabled || !egressL005Guard()) return false;
   btn.disabled = true; btn.textContent = 'Packaging...';
   try {
     var snapshot = JSON.parse(JSON.stringify({ db: db, extraction_telemetry: extractionTelemetry, policy_gate: policyGate }));
     var result = await buildAttachmentPackage(snapshot, recordFileStore);
-    if (result.manifest.missing_files.length && !confirm(result.manifest.missing_files.length + ' referenced files are not attached in this browser. They are listed in manifest.json. Download the available data and files?')) return;
+    if (result.manifest.missing_files.length && !confirm(result.manifest.missing_files.length + ' referenced files are not attached in this browser. They are listed in manifest.json. Download the available data and files?')) return false;
     var url = URL.createObjectURL(result.blob), link = document.createElement('a');
     link.href = url; link.download = 'CIVITA-package.zip'; document.body.appendChild(link); link.click(); link.remove();
     setTimeout(function() { URL.revokeObjectURL(url); }, 1000);
-    logMsg('Exported package with ' + result.manifest.attachments.length + ' attachment entries.');
-  } catch (e) { alert('Package export failed: ' + e.message); }
-  finally { btn.disabled = false; btn.textContent = 'Export'; }
+    logMsg('Saved package with ' + result.manifest.attachments.length + ' attachment entries.');
+    return true;
+  } catch (e) { alert('Save package failed: ' + e.message); return false; }
+  finally { btn.disabled = false; btn.textContent = 'Save'; }
 }
 // ======== END ATTACHMENT IMPORT AND PACKAGE EXPORT ========
 
@@ -10419,12 +10418,13 @@ async function exportJSON() {
   } finally { jsonExportInFlight = false; }
 }
 
-// Save keeps the working dataset locally and downloads data plus embedded attachments.
+// Save keeps the working dataset locally and downloads the complete data/attachment ZIP.
 async function saveWork() {
-  if (jsonExportInFlight) return;
+  var saveButton = document.getElementById('btnSave');
+  if (jsonExportInFlight || (saveButton && saveButton.disabled)) return;
   var storedOk = saveState();
-  if (!await exportJSON()) {
-    logMsg(storedOk ? 'Data saved in this browser; JSON download did not complete.' : 'Browser save and JSON download did not complete.');
+  if (!await exportAttachmentPackage()) {
+    logMsg(storedOk ? 'Data saved in this browser; package download did not complete.' : 'Browser save and package download did not complete.');
     return;
   }
   var btn = document.getElementById('btnSave');
@@ -17787,7 +17787,6 @@ modelSelect.addEventListener('change', function() {
 
 // Header buttons
 $('#btnAddPdfs').addEventListener('click', function() { fileInput.click(); });
-$('#btnValidate').addEventListener('click', function() { validate(); });
 $('#btnAuditSpecimens').addEventListener('click', function() { runSpecimenCompletenessAudit(); });
 $('#btnAuditCitations').addEventListener('click', function() { runCitationPlausibilityAudit(); });
 $('#btnCost').addEventListener('click', function() {
@@ -17795,7 +17794,6 @@ $('#btnCost').addEventListener('click', function() {
   costPanel.style.display = isHidden ? 'block' : 'none';
 });
 $('#btnSave').addEventListener('click', saveWork);
-$('#btnPackage').addEventListener('click', exportAttachmentPackage);
 $('#btnJSON').addEventListener('click', exportJSON);
 $('#btnCSVs').addEventListener('click', exportCSVs);
 $('#btnMerge').addEventListener('click', function() { $('#mergeInput').click(); });
@@ -17809,11 +17807,7 @@ window.addEventListener('beforeunload', function(e) {
   try { if (document.activeElement && document.activeElement.blur) document.activeElement.blur(); } catch (e2) {}
   if (busy || submitInFlight || saveFailedNotified) { e.preventDefault(); e.returnValue = ''; }
 });
-// Hide Submit until the manager has configured the central DB (URL + anon key),
-// so contributors of an unconfigured file don't see a button that only errors.
-if (!CENTRAL_DB_URL || !CENTRAL_DB_ANON_KEY) {
-  var _bs = $('#btnSubmit'); if (_bs) _bs.style.display = 'none';
-}
+// Submit remains visible; its handler explains when database configuration is missing.
 $('#mergeInput').addEventListener('change', function(e) {
   // Snapshot to a static array BEFORE clearing the input: e.target.files is a live
   // FileList, and resetting .value empties it. runMergeImport is async, so reading
@@ -17886,7 +17880,7 @@ var HDR_OVERFLOW_ORDER = [
   'btnLoadPdfDigitize', 'btnAuditSpecimens', 'btnAuditCitations',
   'rememberPdfsLabel', 'clearPdfsBtn',
   'btnJSON', 'btnCSVs', 'btnHelp', 'btnLogs', 'btnClear',
-  'btnMerge', 'btnSave', 'btnPackage', 'btnValidate', 'btnAddPdfs', 'btnCost',
+  'btnMerge', 'btnSave', 'btnAddPdfs', 'btnCost',
   'btnSubmit', 'btnTheme', 'btnModality', 'btnContributor',
   'modelSelect', 'openaiKeyInput', 'apiKeyInput'
 ];
@@ -18079,9 +18073,9 @@ if ($('#btnHdrMore')) {
 // in force. Actions the current mode has hidden or disabled are not listed, so the
 // palette can never offer something the toolbar would refuse.
 var CMDK_ACTIONS = [
-  'btnValidate', 'btnAuditSpecimens', 'btnAuditCitations',
+  'btnAuditSpecimens', 'btnAuditCitations',
   'btnAddPdfs', 'btnLoadPdfDigitize', 'btnAddRowInline', 'btnColumns',
-  'btnSave', 'btnPackage', 'btnMerge', 'btnJSON', 'btnCSVs', 'btnSubmit',
+  'btnSave', 'btnMerge', 'btnJSON', 'btnCSVs', 'btnSubmit',
   'btnLogs', 'btnHelp', 'btnTheme', 'btnContributor', 'btnModality', 'btnClear'
 ];
 var cmdkItems = [], cmdkHot = 0, cmdkReturnFocus = null;

@@ -10,10 +10,12 @@ Open [index.html](index.html), or open `CIVITA-ExpSubmit-v9.02.html` locally in 
 
 The front page has four options in a 2x2 layout, switching to a single column on small screens:
 
-1. **Manual data extraction and data submission** — read papers and enter data yourself, with optional hand digitization.
-2. **AI-assisted data extraction and submission** — select a model and provide your own provider API key.
-3. **Manual data submission from existing datasets** — enter existing results through guided forms.
+1. **Manual data extraction and digitization** — read papers and enter data yourself, with optional hand digitization.
+2. **Manual entry of existing datasets** — enter existing results through guided forms.
+3. **Local AI data extraction** — select a model and provide your own provider API key.
 4. **Personal AI and Direct JSON submission** — extract data using your own AI tools, upload JSON, validate, load, review, and submit separately.
+
+?Local AI? is the name of the built-in extraction option; it calls the selected external AI provider using your API key.
 
 ## Instructions
 
@@ -40,11 +42,15 @@ The HTML contains the application styles, scripts, and embedded images. The loca
 
 ## Data and validation
 
-Work is held in browser storage and memory; Save/Export creates a backup you can keep. Moving between a local file and GitHub Pages changes the browser origin: use an exported JSON file to transfer your dataset rather than expecting browser storage to move with the app.
+Work is held in browser storage and memory; **Save** stores work in the browser and downloads `CIVITA-package.zip` with dataset JSON, table CSVs, attachments, imported values, and record links. Extract `concrete_database.json` from that ZIP to load your backup. Moving between a local file and GitHub Pages changes the browser origin: use an exported JSON file to transfer your dataset rather than expecting browser storage to move with the app.
 
-The app works on one source paper at a time. Save/export current work before clearing or switching to a different source. JSON validation checks structure, required fields, controlled vocabularies, and record links. It does not establish scientific correctness; review the extracted values against the source.
+The app works on one source paper at a time. Save current work before clearing or switching to a different source. JSON validation checks structure, required fields, controlled vocabularies, and record links. It does not establish scientific correctness; review the extracted values against the source.
 
-Central submission is available only when a database has been configured. This release ships with the existing empty database configuration; this release does not include or apply database changes. Local entry, validation, loading, and export remain available.
+The toolbar shows **Submit**. It sends data only when a central database has been configured; otherwise it explains that configuration is missing. This release ships with the existing empty database configuration; this release does not include or apply database changes. Local entry, validation, loading, and export remain available.
+
+## Toolbar
+
+**Save** includes the former Export package function. There are no separate toolbar Export or Validate buttons. Validation still runs internally, and **Validate JSON** remains available in the Personal AI portal.
 
 ## Developer checks
 

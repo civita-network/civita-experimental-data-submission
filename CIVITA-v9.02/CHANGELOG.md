@@ -2,6 +2,10 @@
 
 ## v9.02
 
+- Removed the toolbar Validate and Export controls, made Submit visible, and combined full ZIP package download with Save. Internal validation and portal Validate JSON remain active.
+
+- Updated the entry options and their order: Manual data extraction and digitization; Manual entry of existing datasets; Local AI data extraction; Personal AI and Direct JSON submission.
+
 - Named the entry screen CIVITA Experimental Data Submission.
 - Restored built-in AI-assisted extraction and API-key/model setup.
 - Added Personal AI and Direct JSON submission as a fourth option.

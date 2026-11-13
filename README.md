@@ -10,6 +10,7 @@ Tools for preparing experimental concrete research data for the CIVITA database.
 | Enter data or review an existing dataset | [CIVITA v9.02 application](CIVITA-v9.02/) |
 | Use your own AI coding assistant for Personal AI and Direct JSON submission | [Supplementary digitize skill](digitize-skill/README.md) |
 | Upload AI-generated JSON for validation and submission | Open CIVITA and choose **Personal AI and Direct JSON submission** |
+| Explore an example dataset | [DEMO_GapTest](DEMO_GapTest/) |
 | Read the full application instructions | [CIVITA user guide](CIVITA-v9.02/docs/USER-GUIDE.md) |
 
 ## 1. Download and open CIVITA
@@ -84,9 +85,30 @@ python digitize-skill/scripts/build_output.py paper_digitized/draft.json paper_d
 
 Contributor names, institutions, and emails are included in generated data. The skill uses a readable form of the contributor email in record IDs. Review the files before sharing them. Keep research submissions and source papers out of GitHub unless you intend to publish them; uploading application code is separate from submitting research data.
 
+## Example dataset: DEMO_GapTest
+
+[DEMO_GapTest](DEMO_GapTest/) is an **example dataset** showing how experimental records and their attachments are organized in a CIVITA export package.
+
+It includes one source, 5 geometries, 5 specimens, 13 tests, 89 data records, and 67 attachment entries, together with table CSVs and a file manifest.
+
+To explore it:
+
+1. Download and extract the repository ZIP, or use your local clone.
+2. Save your current CIVITA work before loading the example. If another source is already loaded, clear that working dataset after saving it.
+3. Open CIVITA v9.02 and choose **Load**, then select `DEMO_GapTest/concrete_database.json`. This JSON includes the attachments and imported values needed to restore the example.
+4. Browse its tables and attached files. Loading the example does not submit it to the central database.
+
+The `tables/` folder contains spreadsheet-friendly CSVs. The `attachments/` folder contains original files and imported values; `manifest.json` links those files to their records. See the [example package notes](DEMO_GapTest/README.txt). Use the example for learning and testing rather than submitting it as a new research contribution.
+
 ## Repository contents
 
 ```text
+DEMO_GapTest/
+  concrete_database.json           Example dataset with embedded attachments
+  tables/                          Exported table CSVs
+  attachments/                     Original files and imported values
+  manifest.json                    Attachment-to-record links
+  README.txt                       Package notes
 CIVITA-v9.02/
   index.html                       Browser entry point
   CIVITA-ExpSubmit-v9.02.html       Named application release

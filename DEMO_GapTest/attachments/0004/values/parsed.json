@@ -1,0 +1,34 @@
+{
+  "kind": "table",
+  "file_name": "SRC0001_GEO0004.csv",
+  "imported_at": "2026-10-07T01:47:12.643Z",
+  "headers": [
+    "prism_length",
+    "prism_depth",
+    "prism_thickness",
+    "notch_offset",
+    "notch_depth",
+    "notch_width",
+    "span"
+  ],
+  "rows": [
+    [
+      "mm",
+      "mm",
+      "mm",
+      "mm",
+      "mm",
+      "mm",
+      "mm"
+    ],
+    [
+      "812.8",
+      "203.2",
+      "101.6",
+      "0",
+      "60.96",
+      "3.0",
+      "762.0"
+    ]
+  ]
+}

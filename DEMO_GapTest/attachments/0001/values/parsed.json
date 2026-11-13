@@ -1,0 +1,19 @@
+{
+  "kind": "table",
+  "file_name": "SRC0001_GEO0001.csv",
+  "imported_at": "2026-10-07T01:47:00.036Z",
+  "headers": [
+    "diameter",
+    "length"
+  ],
+  "rows": [
+    [
+      "mm",
+      "mm"
+    ],
+    [
+      "101.6",
+      "203.2"
+    ]
+  ]
+}

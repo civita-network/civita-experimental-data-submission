@@ -1,0 +1,31 @@
+{
+  "kind": "table",
+  "file_name": "test_params_CT-02.csv",
+  "imported_at": "2026-10-07T01:59:04.864Z",
+  "headers": [
+    "Size D",
+    "\\sig_c-1",
+    "\\sig_c-2",
+    "\\sig_c-Mean",
+    "Targeted Mild stress",
+    "Targeted High stress"
+  ],
+  "rows": [
+    [
+      "mm",
+      "Mpa",
+      "Mpa",
+      "Mpa",
+      "Mpa",
+      "Mpa"
+    ],
+    [
+      "203.2",
+      "50.096",
+      "48.345",
+      "49.2205",
+      "19.71",
+      "44.42"
+    ]
+  ]
+}

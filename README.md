@@ -128,3 +128,9 @@ digitize-skill/
 For publishing instructions, see [GitHub upload and Pages](CIVITA-v9.02/docs/GITHUB-UPLOAD.md). This repository keeps the application in the `CIVITA-v9.02` subfolder: when publishing `main` from the repository root, its entry page is under `/CIVITA-v9.02/`. A root website URL requires an `index.html` at the repository root or an appropriate deployment workflow.
 
 Application licensing and attribution are provided in [CIVITA-v9.02/LICENSE](CIVITA-v9.02/LICENSE).
+
+## License and Copyright
+
+Original CIVITA application code and tools are licensed under [MIT](LICENSE). The [v9.02 release license and individual notice](CIVITA-v9.02/LICENSE) remain in effect. See [the local license scope](LICENSING.md) for documentation, demo data, and third-party dependencies. Copyright in original software contributions remains with the respective contributors or other applicable rights holders.
+
+See the [CIVITA licensing policy](https://github.com/civita-network/civita/blob/main/LICENSING.md), [authors and attribution](https://github.com/civita-network/civita/blob/main/AUTHORS.md), and [contribution guidelines](https://github.com/civita-network/civita/blob/main/CONTRIBUTING.md).
